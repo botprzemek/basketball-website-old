@@ -48,16 +48,16 @@ export default {
 			setTimeout(
 				() =>
 					document.body
-						.querySelector(`.${arrowBtn}`)
+						.querySelector(`.${quote}`)
 						.classList.remove("opacity-0"),
 				800
 			);
 			setTimeout(
 				() =>
 					document.body
-						.querySelector(`.${quote}`)
+						.querySelector(`.${arrowBtn}`)
 						.classList.remove("opacity-0"),
-				800
+				1200
 			);
 		},
 		click(link) {
