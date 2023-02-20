@@ -21,29 +21,11 @@ export default {
   data() {
     return {
       links: [
-        { title: 'Start',
-          addr: './',
-        },
-        {
-          title: 'Panel',
-          addr: './panel',
-        },
-        {
-          title: 'O nas',
-          addr: './zespol',
-        },
-        {
-          title: 'Sklep',
-          addr: './sklep',
-        },
-        {
-          title: 'Discord',
-          addr: '/discord',
-        },
-        {
-          title: 'FAQ',
-          addr: './faq',
-        },
+        { title: 'Start', addr: './' },
+        { title: 'Zespół', addr: './zespol' },
+        { title: 'O nas', addr: '/o-nas' },
+        { title: 'Media', addr: '/media' },
+        { title: 'Kontakt', addr: './kontakt' },
       ]
     }
   }
