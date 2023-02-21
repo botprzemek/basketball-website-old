@@ -2,12 +2,15 @@
     font-family: monument-extended;
     src: url(../fonts/monument-extended.ttf);
 }
+html{
+    font-size: 1vw;
+    scroll-behavior: smooth;
+}
 
 body{
     padding: 0;
     margin: 0;
     font-family: monument-extended;
-    font-size: 20px;
     color: #fcfcfc;
 }
 
@@ -34,7 +37,7 @@ header{
 }
 
 .hlogo{
-    width: 35vw;
+    width: 30vw;
     height: auto;
     display: block;
 }
@@ -44,13 +47,100 @@ header{
     grid-auto-flow: row;
     align-self: center;
     align-content: center;
+    padding: 0;
 }
 
 h1{
-    font-size: 7rem;
+    font-size: 6rem;
     font-weight: 500;
     color: #fcfcfc;
     margin: 0;
     cursor:default;
+}
+
+nav{
+    display: grid;
+    grid-auto-flow: column;
+    justify-content:start;
+    gap: 5vw;
+}
+
+nav>a{
+    display: block;
+}
+
+main{
+    background:#060606;
+    display: grid;
+}
+
+h2{
+    color:#f03838;
+    text-align: center;
+}
+section{
+    padding: 5vh 0;
+    display: grid;
+    justify-content: center;
+}
+
+#onas{
+    padding: 5vh 15vw;
+}
+
+.zawodnicy{
+    display: grid;
+    grid-auto-flow: column;
+    gap: 10vw;
+}
+
+.zawodnik{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+    "n n"
+    "i i"
+    "p p"
+    "h w";
+    background: linear-gradient(#f03838, #1d1d1d);
+    width: 20vw;
+    border-radius: 10px;
+}
+
+.zawodnik>img{
+    width: 20vw;
+    grid-area: i;
+    z-index: 10;
+}
+
+span{
+    display: block;
+}
+
+.zawodnik>span{
+    text-align: center;
+    padding: 10px 0;
+}
+
+.zawodnik>span:nth-child(1){
+    font-size: 2rem;
+}
+
+.socialmedia{
+    display: grid;
+    grid-auto-flow: column;
+    gap: 10vw;
+}
+
+.socialmedia>img{
+    width: 5vw;
+}
+footer{
+    height: 75vh;
+    background: linear-gradient(#060606,#f03838);
+    font-size: 7rem;
+    text-align: center;
+    display: grid;
+    align-items: center;
 }
 /*#f23535*/
