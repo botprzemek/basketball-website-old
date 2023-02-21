@@ -105,13 +105,13 @@ section{
     background: linear-gradient(#f03838, #1d1d1d);
     width: 20vw;
     border-radius: 10px;
-    box-shadow: 0px 0px 42px 22px rgba(0, 0, 0, 1);
+    box-shadow: 0px 0px 32px 4px rgba(0, 0, 0, 1);
     transition: 0.3s;
 }
 
 .zawodnik:hover{
     transform: scale(1.05);
-    box-shadow: 0px 0px 60px 30px rgba(0, 0, 0, 1);
+    box-shadow: 0px 0px 45px 20px rgba(0, 0, 0, 1);
     
 }
 
