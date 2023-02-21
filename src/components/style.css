@@ -12,6 +12,7 @@ body{
     margin: 0;
     font-family: monument-extended;
     color: #fcfcfc;
+    background:#222222;
 }
 
 a{
@@ -27,7 +28,7 @@ a:hover{
 
 
 header{
-    background: linear-gradient(#1d1d1d,#060606);
+    background: linear-gradient(#393939,#222222);
     height: 100vh;
     display: grid;
     grid-auto-flow: column;
@@ -61,7 +62,7 @@ h1{
 nav{
     display: grid;
     grid-auto-flow: column;
-    justify-content:start;
+    justify-content:startgit ;
     gap: 5vw;
 }
 
@@ -70,7 +71,6 @@ nav>a{
 }
 
 main{
-    background:#060606;
     display: grid;
 }
 
@@ -105,6 +105,14 @@ section{
     background: linear-gradient(#f03838, #1d1d1d);
     width: 20vw;
     border-radius: 10px;
+    box-shadow: 0px 0px 42px 22px rgba(0, 0, 0, 1);
+    transition: 0.3s;
+}
+
+.zawodnik:hover{
+    transform: scale(1.05);
+    box-shadow: 0px 0px 60px 30px rgba(0, 0, 0, 1);
+    
 }
 
 .zawodnik>img{
@@ -137,7 +145,7 @@ span{
 }
 footer{
     height: 75vh;
-    background: linear-gradient(#060606,#f03838);
+    background: linear-gradient(#222222,#f03838);
     font-size: 7rem;
     text-align: center;
     display: grid;
