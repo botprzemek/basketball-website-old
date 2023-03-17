@@ -6,10 +6,10 @@ export class Team {
 
     constructor(name, players, category, date) {
         this.name = name;
-        players.forEach((player, i) => {
-            this.players[i.toString()] = {
-                name: player.name,
-                age: player.age,
+        Object.keys(players).forEach(key => {
+            this.players[key.toString()] = {
+                name: players[key].name,
+                age: players[key].age,
             }
         });
         this.category = category;
