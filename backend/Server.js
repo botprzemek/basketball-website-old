@@ -19,5 +19,5 @@ server.use(limiter);
 
 server.use('/', router);
 server.listen(serverPort, ()=>{
-    console.log(`API started working on localhost:${serverPort}`)
+    console.log(`Server started working on localhost:${serverPort}`)
 });

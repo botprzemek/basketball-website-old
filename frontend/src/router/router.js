@@ -3,6 +3,7 @@ import HomeComponent from '@/components/HomeComponent.vue'
 
 const routes = [
     { path: '/', name: 'HomeComponent', component: HomeComponent, meta: { title: 'Start'}},
+    { path: '/rejestracja', name: 'RegisterComponent', component: ()=>import('@/components/RegisterComponent.vue'), meta: { title: 'Rejestracja'}},
     { path: '/zespol', name: 'AboutComponent', component: ()=>import('@/components/HomeComponent.vue'), meta: { title: 'O nas'}},
 ];
 

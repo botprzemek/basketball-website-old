@@ -7,9 +7,11 @@ const router = Router();
 
 router.post('/', async (request, response) => {
     try {
-        const data = JSON.parse(request.body.team);
+        let data = null;
+        if (request.body.team == null) return response.sendStatus(400);
+        data = request.body.team;
         Object.keys(data.players).forEach(key => data.players[key] = new Player(data.players[key].name, data.players[key].age));
-        const team = new Team(data.name, data.players, data.category, Timestamp.now());
+        const team = new Team(data.name, data.email, data.category, data.players, Timestamp.now());
         await sendData(team.name, team.getTeam());
         response.sendStatus(201);
     } catch(error) {

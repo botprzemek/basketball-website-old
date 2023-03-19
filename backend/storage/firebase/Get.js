@@ -1,11 +1,15 @@
-import { database } from './Main.js';
-import { getDoc } from 'firebase-admin/'
+import database from './Main.js';
 
 export const getData = async (path) => {
-    const collection = (path === '' || path === undefined || path === null) ? (await database.collection('register').get()).docs. : database.collection('register').doc(path).data();
-    const request = await collection;
-    const result = {};
-    console.log(request);
-    //request.forEach(doc => result[doc.id] = doc.data());
-    //return result;
+    const collection = database.collection('register');
+    if (path === '' || path === undefined || path === null) {
+        const data = await collection.get();
+        let result = {};
+        await data.forEach(doc => result[doc.id] = doc.data());
+        return result;
+    }
+    else {
+        const data = await collection.doc(path).get();
+        return data.data();
+    }
 }

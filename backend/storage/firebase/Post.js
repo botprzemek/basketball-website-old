@@ -1,4 +1,4 @@
-import { database } from './Main.js';
+import database from './Main.js';
 
 const collection = database.collection('register');
 

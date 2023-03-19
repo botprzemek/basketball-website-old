@@ -13,6 +13,7 @@
 
 <script>
 import 'boxicons';
+
 export default {
   name: 'HomeComponent',
   methods: {
@@ -20,10 +21,7 @@ export default {
       setTimeout(()=> document.body.querySelector(`.${heading}`).classList.remove('-translate-y-10', 'opacity-0'), 50);
       setTimeout(()=> document.body.querySelector(`.${description}`).classList.remove('scale-0', 'opacity-0'), 750);
       setTimeout(()=> document.body.querySelector(`.${button}`).classList.remove('scale-0', 'opacity-0'), 1250);
-    },
-    click(link) {
-      window.location.href=link;
-    },
+    }
   },
   mounted() {
     this.animations('heading', 'description', 'button');
