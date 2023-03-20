@@ -1,7 +1,7 @@
 <template>
   <div class="aspect-square bg-main">
     <h3>Imię i nazwisko</h3>
-    <input @input="passData()" v-model="player.name" id="name" name="name" type="text" pattern="[a-z_0-9-]{3,24}" maxlength="24" minlength="3" required>
+    <input @input="passData()" v-model="player.name" id="name" name="name" type="text" pattern="[A-Za-z]{5,48}" maxlength="48" minlength="5" required>
     <h3>Wiek</h3>
     <input @input="passData()" v-model="player.age" id="age" name="age" type="number" pattern="[0-9]{1,2}" maxlength="2" minlength="2" required>
   </div>

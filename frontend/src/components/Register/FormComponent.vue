@@ -1,15 +1,15 @@
 <template>
   <form class="grid">
     <h3>Nazwa drużyny</h3>
-    <input v-model="teamData.team.name" id="name" name="name" type="text" pattern="[a-z_0-9-]{3,24}" maxlength="24" minlength="3" placeholder="Knurów Basket" required>
+    <input v-model="teamData.team.teamname" id="teamname" name="teamname" type="text" pattern="[a-z_0-9-]{5,24}" maxlength="24" minlength="5" placeholder="Knurów Basket" required>
     <h3>Adres E-mail</h3>
     <input v-model="teamData.team.email" id="email" name="email" type="text" pattern="[a-z_0-9-]{3,24}" maxlength="24" minlength="3" placeholder="basket@knurow.pl" required>
     <h3>Kategoria</h3>
-    <input v-model="teamData.team.category" value="0" id="category1" name="category1" type="radio" pattern="[a-z_0-9-]{3,24}" maxlength="24" minlength="3" required>
+    <input v-model="teamData.team.category" value="0" id="category1" name="category1" type="radio" required>
     <label for="category1">Szkolna</label>
-    <input v-model="teamData.team.category" value="1" id="category2" name="category2" type="radio" pattern="[a-z_0-9-]{3,24}" maxlength="24" minlength="3" required>
+    <input v-model="teamData.team.category" value="1" id="category2" name="category2" type="radio" required>
     <label for="category1">Open</label>
-    <input v-model="teamData.team.category" value="2" id="category3" name="category3" type="radio" pattern="[a-z_0-9-]{3,24}" maxlength="24" minlength="3" required>
+    <input v-model="teamData.team.category" value="2" id="category3" name="category3" type="radio" required>
     <label for="category1">Damska</label>
     <h3>Gracze</h3>
     <section class="grid grid-cols-4 gap-4 w-full">
@@ -35,7 +35,7 @@ export default {
     return {
       teamData: {
         team: {
-          name: null,
+          teamname: null,
           email: null,
           category: null,
           players: {},
@@ -48,7 +48,9 @@ export default {
       this.teamData.team.players[i] = data;
     },
     sendData() {
-      sendForm('register', this.teamData);
+      sendForm('register', this.teamData).then(status => {
+        console.log(status);
+      });
     },
   }
 }

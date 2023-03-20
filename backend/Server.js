@@ -18,6 +18,4 @@ server.use(cors({ origin: websiteAddress }), router);
 server.use(limiter);
 
 server.use('/', router);
-server.listen(serverPort, ()=>{
-    console.log(`Server started working on localhost:${serverPort}`)
-});
+server.listen(serverPort, ()=> console.log(`Server started working on localhost:${serverPort}`));

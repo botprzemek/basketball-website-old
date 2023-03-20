@@ -1,12 +1,12 @@
 export class Team {
-    name;
+    teamname;
     email;
     category;
     players = {};
     date;
 
-    constructor(name, email, category, players, date) {
-        this.name = name;
+    constructor(teamname, email, category, players, date) {
+        this.teamname = teamname;
         this.email = email;
         this.category = category;
         Object.keys(players).forEach(key => {

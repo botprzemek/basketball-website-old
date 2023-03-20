@@ -11,8 +11,8 @@ router.post('/', async (request, response) => {
         if (request.body.team == null) return response.sendStatus(400);
         data = request.body.team;
         Object.keys(data.players).forEach(key => data.players[key] = new Player(data.players[key].name, data.players[key].age));
-        const team = new Team(data.name, data.email, data.category, data.players, Timestamp.now());
-        await sendData(team.name, team.getTeam());
+        const team = new Team(data.teamname, data.email, data.category, data.players, Timestamp.now());
+        await sendData(team.teamname, team.getTeam());
         response.sendStatus(201);
     } catch(error) {
         console.log(error);
