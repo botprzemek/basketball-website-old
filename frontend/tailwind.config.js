@@ -13,16 +13,7 @@ module.exports = {
         'bkgd': 'rgb(29, 29, 29)',
       },
       backgroundSize: {
-        full: '400%, 400%',
-      },
-      keyframes: {
-        gradient: {
-          '0%, 100%': { backgroundPosition: '0% 50%' },
-          '50%': { backgroundPosition: '100% 50%' },
-        }
-      },
-      animation: {
-        gradient: 'gradient 30s ease infinite',
+        full: '100%, 100%',
       },
     },
   },
