@@ -22,7 +22,9 @@ export default {
     return {
       links: [
         { title: 'Start', addr: './' },
+        { title: 'Eventy', addr: './eventy' },
         { title: 'Zespół', addr: './zespol' },
+        { title: 'Zrzutka', addr: './zrzutka' },
         { title: 'O nas', addr: '/o-nas' },
         { title: 'Media', addr: '/media' },
         { title: 'Kontakt', addr: './kontakt' },
