@@ -8,7 +8,7 @@
 
 <script>
 export default {
-  name: "NavComponent",
+  name: 'NavComponent',
   methods: {
     scroll(id) {
       window.location.pathname !== '/' ? this.$router.push('/') : document.getElementById(id).scrollIntoView({block: "start", behavior: "smooth"});

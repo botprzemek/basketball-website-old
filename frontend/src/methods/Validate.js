@@ -15,17 +15,15 @@ export const validateData = (data) => {
 }
 
 export const validateElement = (element, name) => {
-   if (name === 'players') {
-      let i = 0;
-      Object.keys(element).forEach(player => {
-         Object.keys(element[player]).forEach(key => {
-            if (!regex.player[key].test(element[player][key])) return false;
-            i++;
-         });
+   if (name !== 'players') return regex[name].test(element);
+   let i = 0;
+   Object.keys(element).forEach(player => {
+      Object.keys(element[player]).forEach(key => {
+         if (!regex.player[key].test(element[player][key])) return false;
+         i++;
       });
-      return (i === 2);
-   }
-   else return regex[name].test(element);
+   });
+   return (i === 2);
 }
 
 export const validateElements = (data) => {

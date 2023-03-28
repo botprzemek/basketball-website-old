@@ -1,5 +1,3 @@
 import database from './Main.js';
 
-const collection = database.collection('register');
-
-export const sendData = async (path, data) => await collection.doc(path.toString()).set(data);
+export const sendData = async (colPath, docPath, data) => await database.collection(colPath).doc(docPath.toString()).set(data);
