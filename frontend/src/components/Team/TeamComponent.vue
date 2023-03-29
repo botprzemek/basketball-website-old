@@ -1,8 +1,8 @@
 <template>
   <main class="z-10 w-screen h relative grid place-content-center select-none">
-    <ul class="grid grid-cols-4 gap-4">
-      <li class="" v-for="player in players" :key="player.name">
-        <PlayerComponent :player="player" />
+    <ul v-if="loading === false" class="grid grid-cols-4 gap-4">
+      <li v-for="player in players" :key="player.name">
+        <PlayerComponent :player="player" :loading="loading" />
       </li>
     </ul>
   </main>
@@ -19,11 +19,16 @@ export default {
   },
   data() {
     return {
+      loading: true,
       players: {},
     }
   },
   beforeMount() {
-    getData('players', async (callback) => this.players = await callback);
+    this.loading = true;
+    getData('players', async (callback) => {
+      this.players = await callback;
+      this.loading = false;
+    });
   }
 }
 </script>

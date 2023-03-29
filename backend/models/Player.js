@@ -4,11 +4,19 @@ export class Player {
     height;
     position;
 
-    constructor(name, lastname, height, position) {
+    constructor(name, lastname) {
         this.name = name;
         this.lastname = lastname;
+    }
+
+    setHeight(height) {
         this.height = height;
+        return this;
+    }
+
+    setPosition(position) {
         this.position = (positionList[position] === undefined) ? positionList[2] : positionList[position];
+        return this;
     }
 
     getHeightInInches() {
@@ -19,16 +27,14 @@ export class Player {
     }
 
     getPlayerData() {
-        return {
-            name: this.name,
-            lastname: this.lastname,
-            height: this.getHeightInInches(),
-            position: this.position.short,
-        }
+        const data = { name: this.name, lastname: this.lastname }
+        if (this.height != null) data['height'] = this.getHeightInInches();
+        if (this.position != null) data['position'] = this.position.short;
+        return data;
     }
 }
 
-const positionList = [
+export const positionList = [
     { index: 0, name: 'Rozgrywający', short: 'PG' },
     { index: 1, name: 'Rzucający obrońca', short: 'SG' },
     { index: 2, name: 'Niski Skrzydłowy', short: 'SF' },

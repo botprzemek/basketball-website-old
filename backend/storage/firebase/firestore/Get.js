@@ -1,7 +1,7 @@
-import database from './Main.js';
+import { firestore } from '../Firebase.js';
 
 export const getData = async (colPath, docPath) => {
-    const collection = database.collection(colPath);
+    const collection = firestore.collection(colPath);
     if (docPath === '' || docPath === undefined || docPath === null) {
         const data = await collection.get();
         let result = {};

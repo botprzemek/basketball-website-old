@@ -1,7 +1,7 @@
 <template>
   <div class="bg-main p-4 relative">
     <h3 class="text-2xl mb-2">
-      <span class="font-bold">{{ player.name }}</span>
+      <span class="text-3xl font-bold">{{ player.name }}</span>
       <br/>
       {{ player.lastname }}
     </h3>
@@ -13,12 +13,9 @@
 <script>
 export default {
   name: 'PlayerComponent',
-  props: [
-      'player',
-  ]
+  props: [ 'player' ]
 }
 </script>
 
-<style scoped>
-
+<style>
 </style>

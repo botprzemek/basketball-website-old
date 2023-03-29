@@ -13,6 +13,6 @@ const routes = [
 const router = createRouter({ history: createWebHistory(), routes });
 
 router.beforeEach(to => { window.document.title = to.meta.title ? to.meta.title + ' | Knury Knurów' : 'Knury Knurów'; });
-router.afterEach(()=>{});
+router.afterEach(() => {});
 
 export default router
