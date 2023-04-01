@@ -24,8 +24,8 @@ export default {
     }
   },
   beforeMount() {
-    this.loading = true;
     getData('players', async (callback) => {
+      this.loading = true;
       this.players = await callback;
       this.loading = false;
     });

@@ -15,6 +15,7 @@ server.disable('x-powered-by');
 server.use(express.json({ limit: '1mb' }));
 server.use(express.urlencoded({ extended: false }));
 server.use(cors({ origin: websiteAddress }), router);
+server.options('*', cors());
 server.use(limiter);
 
 server.use('/', router);
