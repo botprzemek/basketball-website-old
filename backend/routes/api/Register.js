@@ -1,7 +1,7 @@
 import { Router } from 'express';
 import { Timestamp } from 'firebase-admin/firestore';
-import { writeData } from '../storage/firebase/firestore/Post.js';
-import { Team, Player } from '../models/Team.js';
+import { writeData } from '../../storage/firebase/firestore/Post.js';
+import { Team, Player } from '../../models/Team.js';
 
 const router = Router();
 

@@ -1,7 +1,7 @@
 import { Router } from 'express';
-import { getData } from '../storage/firebase/firestore/Get.js';
-import { Player, positionList } from '../models/Player.js';
-import { getCachedData, saveCachedData } from '../storage/cache/Cache.js';
+import { getData } from '../../storage/firebase/firestore/Get.js';
+import { Player, positionList } from '../../models/Player.js';
+import { getCachedData, saveCachedData } from '../../storage/cache/Cache.js';
 
 const router = Router();
 

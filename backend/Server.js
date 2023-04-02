@@ -1,7 +1,7 @@
 import express from 'express';
 import limiter from 'express-rate-limit';
 import * as dotenv from 'dotenv';
-import router from './routes/Main.js';
+import router from './routes/Routes.js';
 import cors from 'cors';
 
 dotenv.config();
@@ -15,8 +15,10 @@ server.disable('x-powered-by');
 server.use(express.json({ limit: '1mb' }));
 server.use(express.urlencoded({ extended: false }));
 server.use(cors({ origin: websiteAddress }), router);
-server.options('*', cors());
 server.use(limiter);
 
+server.options('*', cors());
+
 server.use('/', router);
+
 server.listen(serverPort, ()=> console.log(`Server started working on localhost:${serverPort}`));

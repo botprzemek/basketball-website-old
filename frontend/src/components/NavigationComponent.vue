@@ -1,5 +1,5 @@
 <template>
-  <nav class="z-50 relative">
+  <nav class="z-50 h-[10vh] relative">
     <ul>
       <li class="transform-gpu transition list-none ml-4 text-white hover:text-main hover:scale-105" v-for="link in links" :key="link.title">
         <router-link v-bind:to="link.addr">{{ link.title }}</router-link>

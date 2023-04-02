@@ -1,7 +1,10 @@
 <template>
-  <main class="z-10 w-screen h-screen relative grid place-content-center select-none">
-    <p>{{ contact.phone }}</p>
-  </main>
+  <section v-if="loading" class="z-10 w-full h-fit relative grid place-content-center select-none">
+    <p>Ładuję...</p>
+  </section>
+  <section v-else class="z-10 w-full h-fit relative grid place-content-center select-none">
+    <p>5234532345</p>
+  </section>
 </template>
 
 <script>
@@ -12,13 +15,11 @@ export default {
   data() {
     return {
       loading: true,
-      contact: {
-        phone: null,
-      },
+      contact: null,
     }
   },
-  beforeMount() {
-    getData('webdata/contact', async (callback) => {
+  beforeCreate() {
+    getData('webdata/section/contact', async (callback) => {
       this.loading = true;
       this.contact = await callback;
       this.loading = false;

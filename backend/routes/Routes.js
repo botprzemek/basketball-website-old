@@ -1,8 +1,8 @@
 import express from 'express';
-import register from './Register.js';
-import teams from './Teams.js';
-import players from './Players.js';
-import web from './Web.js';
+import register from './api/Register.js';
+import teams from './api/Teams.js';
+import players from './api/Players.js';
+import web from './api/Web.js';
 
 const router = express.Router();
 
