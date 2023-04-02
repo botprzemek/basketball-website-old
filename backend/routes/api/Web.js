@@ -5,7 +5,7 @@ import { Timestamp } from 'firebase-admin/firestore';
 
 const router = Router();
 
-router.get('/section/:compontent', async (request, response) => response.send(await getData('webdata_pl', request.params.compontent)));
+router.get('/section/:name', async (request, response) => response.send(await getData('webdata_pl', request.params.name)));
 router.get('/updates/full', async (request, response) => response.send(await getData('webdata_pl/updates/content', null)));
 router.get('/updates/full/:update', async (request, response) => response.send(await getData('webdata_pl/updates/content', request.params.update)));
 router.get('/updates/short', async (request, response) => response.send(await getData('webdata_pl/updates/content', null, 'seconds', 'desc')));
