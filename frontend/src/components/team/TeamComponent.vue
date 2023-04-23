@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import PlayerComponent from "@/components/Team/PlayerComponent.vue";
+import PlayerComponent from "@/components/team/PlayerComponent.vue";
 import { getData } from '@/methods/Get';
 
 export default {

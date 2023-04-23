@@ -24,7 +24,7 @@
 
 <script>
 import { sendForm } from '@/methods/Post';
-import PlayerComponent from '@/components/Event/Register/PlayerComponent.vue';
+import PlayerComponent from '@/components/event/Register/PlayerComponent.vue';
 
 export default {
   name: 'FormComponent',
