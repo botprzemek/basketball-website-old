@@ -3,7 +3,7 @@
     <p>Ładuję...</p>
   </section>
   <section v-else class="z-10 w-full h-fit relative grid place-content-center select-none">
-    <p>5234532345</p>
+    <p>{{ contact }}</p>
   </section>
 </template>
 
@@ -18,13 +18,13 @@ export default {
       contact: null,
     }
   },
-  beforeCreate() {
+  beforeMount() {
     getData('webdata/section/contact', async (callback) => {
       this.loading = true;
       this.contact = await callback;
       this.loading = false;
     });
-  }
+  },
 }
 </script>
 

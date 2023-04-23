@@ -15,6 +15,15 @@ module.exports = {
       backgroundSize: {
         full: '100%, 100%',
       },
+      animation: {
+        'spinner': 'spinner 16s linear infinite',
+      },
+      keyframes: {
+        spinner: {
+          '0%': { transform: 'rotate(0deg)' },
+          '100%': { transform: 'rotate(360deg)' },
+        },
+      },
     },
   },
 }

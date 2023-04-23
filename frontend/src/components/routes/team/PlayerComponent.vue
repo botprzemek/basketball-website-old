@@ -1,23 +1,23 @@
 <template>
-  <main v-if="playerData != null" class="z-10 w-screen h-screen relative grid place-content-center select-none">
+  <section v-if="playerData != null" class="z-10 w-screen h-screen relative grid place-content-center select-none">
     <div class="bg-main p-4 relative">
-      <h3 class="text-2xl mb-2">
-        <span class="text-3xl font-bold">{{ playerData.name }}</span>
+      <h3 class="text-lg mb-2">
+        <span class="text-md font-bold">{{ playerData.name }}</span>
         <br/>
         {{ playerData.lastname }}
       </h3>
       <p class="text-xl">{{ playerData.height }}</p>
-      <span class="text-4xl font-bold absolute right-0 bottom-0 p-4">{{ playerData.position }}</span>
+      <span class="text-2xl font-bold absolute right-0 bottom-0 p-4">{{ playerData.position }}</span>
     </div>
-  </main>
+  </section>
   <div v-else class="z-10 w-full h-full bg-main p-4 relative" @click="redirect" @mouseover="$event.target.style.cursor = 'pointer'">
-    <h3 class="text-2xl mb-2">
-      <span class="text-3xl font-bold">{{ player.name }}</span>
+    <h3 class="text-lg mb-2">
+      <span class="text-md font-bold">{{ player.name }}</span>
       <br/>
       {{ player.lastname }}
     </h3>
     <p class="text-xl">{{ player.height }}</p>
-    <span class="text-4xl font-bold absolute right-0 bottom-0 p-4">{{ player.position }}</span>
+    <span class="text-2xl font-bold absolute right-0 bottom-0 p-4">{{ player.position }}</span>
   </div>
 </template>
 
@@ -40,8 +40,12 @@ export default {
     async getData(player) {
       this.loading = true;
       if (typeof player === 'string') await getData(`players/fullname/${player}`, async (callback) => {
-        this.playerData = await callback;
-        this.loading = false;
+        if (callback.message !== 'Failed to fetch') {
+          this.playerData = await callback;
+          this.loading = false;
+          return;
+        }
+        window.location.href = '/';
       });
     }
   },

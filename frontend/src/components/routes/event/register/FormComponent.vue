@@ -24,7 +24,7 @@
 
 <script>
 import { sendForm } from '@/methods/Post';
-import PlayerComponent from '@/components/event/Register/PlayerComponent.vue';
+import PlayerComponent from '@/components/routes/event/register/PlayerComponent.vue';
 
 export default {
   name: 'FormComponent',
@@ -48,9 +48,7 @@ export default {
       this.teamData.team.players[i] = data;
     },
     sendData() {
-      sendForm('register', this.teamData).then(status => {
-        console.log(status);
-      });
+      sendForm('register', this.teamData);
     },
   }
 }

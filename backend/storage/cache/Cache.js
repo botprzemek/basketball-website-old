@@ -1,6 +1,5 @@
-import { Cache } from 'memory-cache';
+import NodeCache from 'node-cache';
 
-let newCache = new Cache();
-
-export const saveCachedData = (key, value, time, callback) => newCache.put(key, value, time, callback)
-export const getCachedData = (key) => { return newCache.get(key) }
+const newCache = new NodeCache();
+export const saveCachedData = (key, value, time) => newCache.set(key, value, time)
+export const getCachedData = key => { return newCache.get(key) }

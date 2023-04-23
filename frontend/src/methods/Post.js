@@ -12,7 +12,7 @@ export const sendForm = (path, data) => {
         body: JSON.stringify(data),
     };
 
-    fetch(`http://localhost:8081/${path}`, options)
-        .then(response => { return response.ok })
+    fetch(`https://localhost:8081/${path}`, options)
+        .then(response => console.log(response.ok))
         .catch(error => console.log(error));
 }

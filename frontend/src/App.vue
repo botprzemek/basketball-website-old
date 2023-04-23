@@ -1,26 +1,19 @@
 <template>
   <NavigationComponent/>
-  <section class="min-h-screen h-full pl-12">
-    <main>
+  <section class="min-h-screen h-full pl-12 flex flex-col">
+    <main class="flex w-full h-full">
       <router-view/>
     </main>
     <FooterComponent/>
+    <SpinnerComponent/>
   </section>
 </template>
 
-<script>
+<script setup>
 import '@/main.css';
-// import lottie from 'lottie-web';
-import NavigationComponent from '@/components/NavigationComponent';
-import FooterComponent from '@/components/FooterComponent';
-
-export default {
-  name: 'App',
-  components: {
-    NavigationComponent,
-    FooterComponent,
-  },
-}
+import NavigationComponent from '@/components/navigation/NavigationComponent';
+import FooterComponent from '@/components/footer/FooterComponent';
+import SpinnerComponent from '@/components/utils/SpinnerComponent';
 </script>
 
 <style>
