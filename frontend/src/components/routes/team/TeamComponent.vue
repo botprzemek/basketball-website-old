@@ -1,5 +1,5 @@
 <template>
-  <section class="z-10 w-screen relative select-none mx-4">
+  <section class="z-10 w-full h-full relative place-content-center select-none mx-4">
     <div class="text-3xl font-bold mt-8 mb-2 w-fit relative">
       <h1 class="header z-10 relative w-fit opacity-0">Nasz Zespół</h1>
       <div class="pseudo z-20 absolute bg-secd w-[150%] h-full inset-0 -left-[25%] transform-gpu transition duration-1000 ease-in-out -translate-x-[40vw] origin-right"></div>

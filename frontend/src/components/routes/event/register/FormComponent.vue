@@ -1,22 +1,22 @@
 <template>
   <form class="grid">
-    <h3>Nazwa drużyny</h3>
+    <div class="text-3xl font-bold mt-8 mb-2 w-fit relative">
+      <h2 class="header z-10 relative w-fit">Nazwa drużyny</h2>
+      <div class="pseudo z-20 absolute bg-secd w-[150%] h-full inset-0 -left-[25%] transform-gpu transition duration-1000 ease-in-out -translate-x-[40vw] origin-right"></div>
+    </div>
     <input v-model="teamData.team.teamname" id="teamname" name="teamname" type="text" pattern="[a-z_0-9-]{5,24}" maxlength="24" minlength="5" placeholder="Knurów Basket" required>
     <h3>Adres E-mail</h3>
     <input v-model="teamData.team.email" id="email" name="email" type="text" pattern="[a-z_0-9-]{3,24}" maxlength="24" minlength="3" placeholder="basket@knurow.pl" required>
     <h3>Kategoria</h3>
-    <input v-model="teamData.team.category" value="0" id="category1" name="category1" type="radio" required>
-    <label for="category1">Szkolna</label>
-    <input v-model="teamData.team.category" value="1" id="category2" name="category2" type="radio" required>
-    <label for="category1">Open</label>
-    <input v-model="teamData.team.category" value="2" id="category3" name="category3" type="radio" required>
-    <label for="category1">Damska</label>
+    <input v-model="teamData.team.category" value="0" id="category" name="category1" type="radio" required>
+    <label for="category">Szkolna</label>
+    <input v-model="teamData.team.category" value="1" id="category" name="category2" type="radio" required>
+    <label for="category">Open</label>
+    <input v-model="teamData.team.category" value="2" id="category" name="category3" type="radio" required>
+    <label for="category">Damska</label>
     <h3>Gracze</h3>
     <section class="grid grid-cols-4 gap-4 w-full">
-      <PlayerComponent @passPlayer="passData($event,0)"  />
-      <PlayerComponent @passPlayer="passData($event,1)"  />
-      <PlayerComponent @passPlayer="passData($event,2)"  />
-      <PlayerComponent @passPlayer="passData($event,3)" />
+      <PlayerComponent @passPlayer="passData($event,i - 1)" v-for="i in 4" :key="i"/>
     </section>
     <button @click.prevent="sendData()">ZATWIERDŹ</button>
   </form>

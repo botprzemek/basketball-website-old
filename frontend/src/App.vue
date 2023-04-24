@@ -1,6 +1,6 @@
 <template>
   <NavigationComponent/>
-  <section class="min-h-screen h-full pl-12 flex flex-col">
+  <section class="min-h-screen h-full pl-12 flex flex-col relative">
     <main class="flex w-full h-full">
       <router-view/>
     </main>

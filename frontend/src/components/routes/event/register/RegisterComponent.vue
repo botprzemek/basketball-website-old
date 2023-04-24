@@ -1,7 +1,7 @@
 <template>
-  <main class="z-10 w-screen h-screen relative grid place-content-center select-none">
+  <section class="z-10 w-full h-full relative grid select-none mx-4">
     <FormComponent />
-  </main>
+  </section>
 </template>
 
 <script>
