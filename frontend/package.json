@@ -1,9 +1,8 @@
 {
   "name": "basketball-landing-page",
   "version": "0.1.0",
-  "author": "botprzemek",
-  "license": "ISC",
   "private": true,
+  "author": "botprzemek",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
@@ -15,6 +14,7 @@
     "core-js": "^3.8.3",
     "lottie-web": "^5.10.2",
     "postcss": "^8.4.21",
+    "register-service-worker": "^1.7.2",
     "tailwindcss": "^3.2.4",
     "vue": "^3.2.13",
     "vue-router": "^4.1.6"
@@ -24,6 +24,7 @@
     "@babel/eslint-parser": "^7.12.16",
     "@vue/cli-plugin-babel": "~5.0.0",
     "@vue/cli-plugin-eslint": "~5.0.0",
+    "@vue/cli-plugin-pwa": "~5.0.0",
     "@vue/cli-service": "~5.0.0",
     "eslint": "^7.32.0",
     "eslint-plugin-vue": "^8.0.3"
@@ -47,5 +48,6 @@
     "last 2 versions",
     "not dead",
     "not ie 11"
-  ]
+  ],
+  "license": "ISC"
 }

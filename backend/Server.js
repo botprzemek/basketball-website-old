@@ -17,4 +17,4 @@ server.options('*', cors());
 
 server.use('/', router);
 
-server.listen(serverPort, ()=> console.log(`Server started working on localhost:${serverPort}`));
+server.listen(serverPort, () => console.log(`[server] Listening on http://localhost:${serverPort}`));

@@ -1,4 +1,4 @@
-import { validateElements } from './Validate';
+import { validateElements } from './Validate.js';
 
 export const sendForm = (path, data) => {
     if (!validateElements(data)) return console.log('Error occured');
@@ -9,7 +9,7 @@ export const sendForm = (path, data) => {
             'Accept': 'application/json',
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify(data),
+        body: data,
     };
 
     fetch(`https://localhost:8081/${path}`, options)

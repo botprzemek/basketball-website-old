@@ -1,4 +1,4 @@
-import { firestore } from '../Firebase.js';
+import {firestore} from '../Firebase.js';
 
 export const getData = async (collectionPath, documentPath, filter, state, condition, matching) => {
     let collection = await firestore.collection(collectionPath), result = {};
