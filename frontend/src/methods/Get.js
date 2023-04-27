@@ -1,6 +1,8 @@
-const options = { method: 'GET', headers: {} };
+const options = {method: 'GET', headers: {}};
 
 export const getData = async (path, callback) => {
-    const response = await fetch(`http://localhost:8081/${path}`, options);
-    return callback(response);
+    fetch(`http://localhost:8081/${path}`, options)
+        .then(response => response.json())
+        .then(data => callback(data))
+        .catch(error => console.log(error));
 }
