@@ -7,7 +7,7 @@ import web from './route/Web.js';
 const router = express.Router();
 
 router.use((request, response, next) => next());
-router.use('/register', register);
+router.use('/events/streetball', register);
 router.use('/teams', teams);
 router.use('/players', players);
 router.use('/webdata', web);

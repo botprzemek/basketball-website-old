@@ -1,20 +1,18 @@
 <template>
   <NavigationComponent/>
-  <section class="min-h-screen h-full pl-12 flex flex-col relative">
-    <main class="flex w-full h-full">
+  <section class="z-10 min-h-screen h-full pl-12 flex flex-col relative select-none">
+    <main class="flex w-full h-full p-12 box-border">
       <router-view/>
     </main>
-    <FooterComponent/>
+    <!--    <FooterComponent/>-->
     <SpinnerComponent/>
   </section>
 </template>
 
 <script setup>
-import '@/main.css';
-import NavigationComponent from '@/components/navigation/NavigationComponent';
-import FooterComponent from '@/components/footer/FooterComponent';
-import SpinnerComponent from '@/components/utils/SpinnerComponent';
-</script>
+import "@/main.css";
+import NavigationComponent from "@/components/navigation/NavigationComponent";
+import SpinnerComponent from "@/components/utils/SpinnerComponent";</script>
 
 <style>
 </style>

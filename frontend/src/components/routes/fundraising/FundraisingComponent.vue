@@ -1,11 +1,11 @@
 <template>
-  <main></main>
+  <section></section>
 </template>
 
 <script>
 export default {
-  name: 'FundraisingComponent',
-  beforeCreate() {
+  name: "FundraisingComponent",
+  beforeRouteEnter() {
     window.location.href = 'https://www.zrzutka.pl/z/knury-knurow';
   }
 }
