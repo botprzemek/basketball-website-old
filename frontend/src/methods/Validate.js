@@ -1,6 +1,7 @@
 const regex = {
     teamname: /([a-zA-Z0-9-]{3,24})/,
     email: /([a-z0-9]{3,24})(@)([a-z0-9]{3,24})(\.)([a-z]{1,5})/,
+    phone: /([0-9]{9})/,
     category: /([0-2])/,
     player: {
         name: /([a-zA-Z]{3,24})(\s)([a-zA-Z]{3,24})/,
@@ -20,10 +21,11 @@ export const validateElement = (element, name) => {
     return (i === 2);
 }
 
-export const validateElements = (data) => {
-    let validationState = false;
+export const validateData = (data) => {
+    let error = {};
     Object.keys(data.team).forEach(name => {
-        validationState = validateElement(data.team[name], name);
+        if (validateElement(data.team[name], name));
     });
-    return validationState;
+    if (Object.keys(error).length === 0) return true;
+    return false;
 }

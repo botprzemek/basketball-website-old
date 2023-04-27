@@ -4,11 +4,16 @@
       <div class="z-10 w-full h-full absolute flex items-center">
         <div class="w-full h-px bg-secd"></div>
       </div>
-      <div v-for="i in 5" :key="i" class="z-20 w-10 h-10 relative bg-secd aspect-square grid place-content-center">
-        <p class="w-full h-full text-main text-lg font-bold p-2 mt-0.5">{{ i }}</p>
+      <div v-for="i in 5" :key="i">
+        <div v-if="i <= formState"  class="z-20 w-10 h-10 relative bg-main aspect-square grid place-content-center">
+          <p class="w-full h-full text-secd text-lg font-bold p-2 mt-0.5">{{ i }}</p>
+        </div>
+        <div v-else class="z-20 w-10 h-10 relative bg-secd aspect-square grid place-content-center">
+          <p class="w-full h-full text-main text-lg font-bold p-2 mt-0.5">{{ i }}</p>
+        </div>
       </div>
     </section>
-    <section class="flex flex-col hidden">
+    <section class="flex flex-col" v-if="formState === 1">
       <section class="w-full h-fit grid place-content-start mb-1.5">
         <h2 class="text-2xl font-bold">Nazwa Drużyny</h2>
         <p class="text-sm">Wprowadź nazwę swojej drużyny.</p>
@@ -18,17 +23,10 @@
                class="w-full bg-transparent text-secd text-sm placeholder-secd mt-0.5 focus:outline-0"
                maxlength="24"
                minlength="5" name="teamname"
-               pattern="[a-z_0-9-]{5,24}" placeholder="Twoja nazwa" required type="text">
-      </section>
-      <section class="w-full h-fit grid place-items-end">
-        <div class="w-fit h-fit flex flex-row">
-          <ButtonComponent :id="3" bgColor="transparent" text="Powrót" textColor="main"
-                           textWeight="light"/>
-          <ButtonComponent :id="3" bgColor="secd" text="Dalej" textColor="main" textWeight="bold"/>
-        </div>
+               pattern="[a-z_0-9\s]{5,24}" placeholder="Twoja nazwa" required type="text">
       </section>
     </section>
-    <section class="flex flex-col hidden">
+    <section class="flex flex-col" v-if="formState === 2">
       <section class="w-full h-fit grid place-content-start mb-1.5">
         <h2 class="text-2xl font-bold">Kategoria Rozgrywek</h2>
         <p class="text-sm">Wybierz kategorię, w której drużyna będzie uczestniczyć.</p>
@@ -47,15 +45,8 @@
           <p class="text-2xl font-bold mt-1">Damska</p>
         </div>
       </section>
-      <section class="w-full h-fit grid place-items-end">
-        <div class="w-fit h-fit flex flex-row">
-          <ButtonComponent :id="3" bgColor="transparent" text="Powrót" textColor="main"
-                           textWeight="light"/>
-          <ButtonComponent :id="3" bgColor="secd" text="Dalej" textColor="main" textWeight="bold"/>
-        </div>
-      </section>
     </section>
-    <section class="flex flex-col hidden">
+    <section class="flex flex-col" v-if="formState === 3">
       <section class="w-full h-fit grid place-content-start mb-1.5">
         <h2 class="text-2xl font-bold">Twój Zespół</h2>
         <p class="text-sm">Wprowadź graczy, którzy będą uczestniczyć w rozgrywkach.</p>
@@ -78,15 +69,8 @@
           <p class="text-2xl font-bold mt-1">Damska</p>
         </div>
       </section>
-      <section class="w-full h-fit grid place-items-end">
-        <div class="w-fit h-fit flex flex-row">
-          <ButtonComponent :id="3" bgColor="transparent" text="Powrót" textColor="main"
-                           textWeight="light"/>
-          <ButtonComponent :id="3" bgColor="secd" text="Dalej" textColor="main" textWeight="bold"/>
-        </div>
-      </section>
     </section>
-    <section class="flex flex-col">
+    <section class="flex flex-col" v-if="formState === 4">
       <section class="w-full h-fit grid place-content-start mb-1.5">
         <h2 class="text-2xl font-bold">Dane Kontaktowe</h2>
         <p class="text-sm">Wprowadź dane kontaktowe kapitana, email zostanie wykorzystany do weryfikacji formularza.</p>
@@ -104,13 +88,14 @@
                required
                size="9" type="tel">
       </section>
-      <section class="w-full h-fit grid place-items-end">
-        <div class="w-fit h-fit flex flex-row">
-          <ButtonComponent :id="3" bgColor="transparent" text="Powrót" textColor="main"
-                           textWeight="light"/>
-          <ButtonComponent :id="3" bgColor="secd" text="Dalej" textColor="main" textWeight="bold"/>
-        </div>
-      </section>
+    </section>
+    <section class="w-full h-fit grid place-items-end">
+      <div class="w-fit h-fit flex flex-row">
+        <ButtonComponent v-if="this.formState === 0" @click="changeState(true)" :id="3" bgColor="secd" text="Rozpocznij" textColor="main" textWeight="bold"/>
+        <ButtonComponent v-if="(this.formState > 0) && (this.formState <= 5)" @click="changeState(false)" :id="3" bgColor="transparent" text="Powrót" textColor="main" textWeight="light"/>
+        <ButtonComponent v-if="(this.formState > 0) && (this.formState < 5)" @click="changeState(true)" :id="3" bgColor="secd" text="Dalej" textColor="main" textWeight="bold"/>
+        <ButtonComponent v-if="this.formState === 5" @click="sendData" :id="3" bgColor="secd" text="Zatwierdź" textColor="main" textWeight="bold"/>
+      </div>
     </section>
     <!--    <div class="text-3xl font-bold mt-8 mb-2 w-fit relative">-->
     <!--      <h2 class="header z-10 relative w-fit">Rejestracja</h2>-->
@@ -146,6 +131,7 @@ export default {
   },
   data() {
     return {
+      formState: 1 * localStorage.getItem('form-state'),
       teamData: {
         team: {
           teamname: null,
@@ -158,12 +144,21 @@ export default {
     }
   },
   methods: {
-    passData(data, i) {
-      this.teamData.team.players[i] = data;
+    changeState(boolean) {
+      if ((this.formState <= 0 && !boolean) || (this.formState >= 5 && boolean)) return;
+      (boolean) ? this.formState++ : this.formState--;
+      localStorage.setItem('form-state', this.formState);
     },
+    // passData(data, i) {
+    //   this.teamData.team.players[i] = data;
+    //   localStorage.setItem('form-state', this.formState);
+    // },
     sendData() {
       sendForm('register', this.teamData);
     },
+  },
+  mounted() {
+    if (!localStorage.getItem('form-state')) localStorage.setItem('form-state', '0');
   }
 }
 </script>

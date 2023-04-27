@@ -2,7 +2,7 @@ export const errors = {
     null: {
         teamname: 'Team name is null, try again.',
         email: 'Email address is null, try again.',
-        phone: 'Phone number is not valid, try again.',
+        phone: 'Phone number is null, try again.',
         category: 'Team category is null, try again.',
         players: 'Not enough players, try again.',
     },
@@ -16,7 +16,7 @@ export const errors = {
 };
 
 export const regex = {
-    teamname: /([a-zA-Z0-9-]{3,24})/,
+    teamname: /([a-zA-Z0-9-\s]{3,24})/,
     email: /([a-z0-9]{3,24})(@)([a-z0-9]{3,24})(\.)([a-z]{1,5})/,
     phone: /([0-9]{9})/,
     category: /([0-2])/,
@@ -29,12 +29,13 @@ export const regex = {
 export const validateData = (data, response) => {
     let error = {};
     Object.keys(regex).forEach(key => {
-        if (key !== 'category' || (!data[key] && key !== 'phone')) error[key] = errors.null[key];
-        if ()
-        if (error[key] !== null && !validateElement(data[key], key)) error[key] = errors.regex[key];
+        if (error[key] === null) return;
+        if (!data[key] && key === 'phone') return;
+        if (!data[key] && key !== 'category') return error[key] = errors.null[key];
+        if (!validateElement(data[key], key)) error[key] = errors.regex[key];
     });
     if (Object.keys(data.players).length < 3) error = errors.null.players;
-    if (!error) return true;
+    if (Object.keys(error).length === 0) return true;
     response.send({errors: error});
     return false;
 }
