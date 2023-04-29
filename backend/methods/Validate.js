@@ -34,7 +34,7 @@ export const validateData = (data, response) => {
         if (!data[key] && key !== 'category') return error[key] = errors.null[key];
         if (!validateElement(data[key], key)) error[key] = errors.regex[key];
     });
-    if (Object.keys(data.players).length < 3) error = errors.null.players;
+    if (Object.keys(data.players).length < 3) error.players = errors.null.players;
     if (Object.keys(error).length === 0) return true;
     response.send({errors: error});
     return false;

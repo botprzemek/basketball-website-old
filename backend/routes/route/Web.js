@@ -1,6 +1,6 @@
 import { Router } from 'express';
-import { getData } from '../../storage/firebase/firestore/Get.js';
-import { getCachedData, saveCachedData } from '../../storage/cache/Cache.js';
+import { getData } from '../../methods/firebase/firestore/Get.js';
+import { getCachedData, saveCachedData } from '../../methods/cache/Cache.js';
 import { Timestamp } from 'firebase-admin/firestore';
 
 const router = Router();

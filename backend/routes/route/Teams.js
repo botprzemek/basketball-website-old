@@ -1,5 +1,5 @@
 import {Router} from 'express';
-import {getData} from "../../storage/firebase/firestore/Get.js";
+import {getData} from '../../methods/firebase/firestore/Get.js';
 
 const router = Router();
 

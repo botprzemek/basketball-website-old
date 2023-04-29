@@ -17,7 +17,8 @@
     "firebase": "^9.17.2",
     "firebase-admin": "^11.5.0",
     "mailtrap": "^3.1.0",
-    "node-cache": "^5.1.2"
+    "node-cache": "^5.1.2",
+    "nodemailer": "^6.9.1"
   },
   "devDependencies": {
     "nodemon": "^2.0.21"

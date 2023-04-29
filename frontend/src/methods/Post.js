@@ -1,16 +1,17 @@
-import {validateData} from './Validate.js';
+// import {validateData} from './Validate.js';
 
-export const sendForm = (path, data) => {
-    if (!validateData(data)) return console.log('Error occured');
+export const sendForm = (path, data, callback) => {
+    // if (!validateData(data)) return console.log('Error occured');
     const options = {
         method: 'POST',
+        mode: 'cors',
         headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json'
         },
-        body: data,
+        body: JSON.stringify(data),
     };
-    fetch(`https://localhost:8081/${path}`, options)
-        .then(response => console.log(response.ok))
+    fetch(`http://localhost:8081/${path}`, options)
+        .then(response => callback(response))
         .catch(error => console.log(error));
 }
