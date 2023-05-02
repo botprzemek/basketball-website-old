@@ -105,7 +105,9 @@ export const getTemplate = (token) => {
                                                             src="https://knuryknurow.pl/img/knury_logo.svg"
                                                             class="m_big"
                                                             style="display:block;height:auto;border:0;width:495px;max-width:100%"
-                                                            width="495"></a></div>
+                                                            width="495"
+                                                            alt="Logo Knury Knurów"
+                                                            title="Logo Knury Knurów"></a></div>
                                                 </td>
                                             </tr>
                                         </table>
