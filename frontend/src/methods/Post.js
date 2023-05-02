@@ -11,7 +11,7 @@ export const sendForm = (path, data, callback) => {
         },
         body: JSON.stringify(data),
     };
-    fetch(`http://localhost:8081/${path}`, options)
+    fetch(`https://api.knuryknurow.pl/${path}`, options)
         .then(response => callback(response))
         .catch(error => console.log(error));
 }

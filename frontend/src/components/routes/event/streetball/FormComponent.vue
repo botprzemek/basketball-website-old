@@ -181,8 +181,12 @@ export default {
   methods: {
     changeState(boolean) {
       if (this.formState === 0) return this.formState++;
+      if (this.formState === 5 && boolean) {
+        this.formState++;
+        localStorage.setItem('form-state', `${this.formState}`);
+      }
       if (boolean && !this.validation.team[this.section[this.formState]]) return;
-      if ((this.formState <= 1 && !boolean) || (this.formState >= 5 && boolean)) return;
+      if ((this.formState <= 1 && !boolean) || (this.formState >= 6 && boolean)) return;
       (boolean) ? this.formState++ : this.formState--;
       localStorage.setItem('form-state', `${this.formState}`);
     },
@@ -193,7 +197,10 @@ export default {
       localStorage.setItem(key, `${value}`);
     },
     sendData() {
-      this.teamData.team.players.forEach((player, i) => this.teamData.team.players[i] = {name: player.name, age: player.age});
+      this.changeState(true);
+      this.teamData.team.players.forEach((player, i) => {
+        this.teamData.team.players[i] = {name: player.name, age: player.age};
+      });
       sendForm('events/streetball/register', this.teamData, async callback => {
         if (callback.ok) return this.changeState(true);
         console.log(await callback.json());
