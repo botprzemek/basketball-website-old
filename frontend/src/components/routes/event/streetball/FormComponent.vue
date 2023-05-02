@@ -11,10 +11,10 @@
         </div>
         <div v-for="i in 5" :key="i">
           <div v-if="i <= formState"  class="z-20 w-10 h-10 relative bg-main aspect-square grid place-content-center">
-            <p class="w-full h-full text-secd text-lg font-bold p-2 mt-0.5">{{ i }}</p>
+            <p class="w-full h-full text-secd text-2xl sm:text-lg font-bold p-2 mt-0.5">{{ i }}</p>
           </div>
           <div v-else class="z-20 w-10 h-10 relative bg-secd aspect-square grid place-content-center">
-            <p class="w-full h-full text-main text-lg font-bold p-2 mt-0.5">{{ i }}</p>
+            <p class="w-full h-full text-main text-2xl sm:text-lg font-bold p-2 mt-0.5">{{ i }}</p>
           </div>
         </div>
       </section>
@@ -29,7 +29,7 @@
         <section class="w-full h-fit flex flex-row flex-grow gap-3">
           <section class="w-full h-fit px-3 py-2 border-secd border-[1px] mb-3">
             <input @input="saveData('teamname', $event.target.value)" id="teamname" v-model="teamData.team.teamname"
-                   class="w-full bg-transparent text-secd text-sm placeholder-secd mt-0.5 focus:outline-0"
+                   class="w-full bg-transparent text-secd text-md sm:text-sm placeholder-secd mt-0.5 focus:outline-0"
                    maxlength="24"
                    minlength="5" name="teamname"
                    pattern="[a-zA-Z_0-9\s]{5,24}" placeholder="Nazwa Drużyny" required type="text">
@@ -45,7 +45,7 @@
           <h2 class="text-2xl font-bold">Kategoria Rozgrywek</h2>
           <p class="text-sm">Wybierz kategorię, w której drużyna będzie uczestniczyć.</p>
         </section>
-        <section class="grid grid-flow-col gap-3">
+        <section class="grid grid-flow-row sm:grid-flow-col gap-3">
           <div v-if="teamData.team.category === 0" class="w-full h-fit px-3 py-2 border-main bg-main border-[1px] mb-3 grid place-content-center transition-all duration-300 ease-out">
             <p class="text-2xl font-bold mt-1">Szkolna</p>
           </div>
@@ -84,7 +84,7 @@
         <section class="w-full h-fit flex flex-row flex-grow gap-3">
           <section class="w-full h-fit px-3 py-2 border-secd border-[1px] mb-3">
             <input @input="saveData('email', $event.target.value)" id="email" v-model="teamData.team.email"
-                   class="w-full bg-transparent text-secd text-sm placeholder-secd mt-0.5 focus:outline-0"
+                   class="w-full bg-transparent text-secd text-md sm:text-sm placeholder-secd mt-0.5 focus:outline-0"
                    maxlength="24" minlength="3" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-z]{2,}$" placeholder="Adres email"
                    required type="email">
           </section>
@@ -96,7 +96,7 @@
         <section class="w-full h-fit flex flex-row flex-grow gap-3">
           <section class="w-full h-fit px-3 py-2 border-secd border-[1px] mb-3">
             <input @input="saveData('phone', $event.target.value)" id="phone" v-model="teamData.team.phone"
-                   class="w-full bg-transparent text-secd text-sm placeholder-secd mt-0.5 focus:outline-0"
+                   class="w-full bg-transparent text-secd text-md sm:text-sm placeholder-secd mt-0.5 focus:outline-0"
                    maxlength="9" minlength="9" name="phone" pattern="[0-9]{9}" placeholder="Numer telefonu*"
                    size="9" type="tel">
           </section>
@@ -124,12 +124,12 @@
           </p>
         </section>
       </section>
-      <section class="w-full h-fit grid place-items-end">
+      <section class="w-full h-fit grid place-items-end mb-48">
         <div class="w-fit h-fit flex flex-row">
-          <ButtonComponent v-if="this.formState === 0" @click="changeState(true)" :id="3" bgColor="secd" text="Rozpocznij" textColor="main" textWeight="bold"/>
-          <ButtonComponent v-if="(this.formState > 1) && (this.formState <= 5)" @click="changeState(false)" :id="3" bgColor="transparent" text="Powrót" textColor="main" textWeight="light"/>
-          <ButtonComponent v-if="(this.formState > 0) && (this.formState < 5)" @click="changeState(true)" :id="3" bgColor="secd" text="Dalej" textColor="main" textWeight="bold"/>
-          <ButtonComponent v-if="this.formState === 5" @click.once="sendData" :id="3" bgColor="secd" text="Zatwierdź" textColor="main" textWeight="bold"/>
+          <ButtonComponent v-if="this.formState === 0" @click="changeState(true)" :id="3" bgColor="secd" text="Rozpocznij" textColor="main" textWeight="bold" class="text-lg sm:text-md"/>
+          <ButtonComponent v-if="(this.formState > 1) && (this.formState <= 5)" @click="changeState(false)" :id="3" bgColor="transparent" text="Powrót" textColor="main" textWeight="light" class="text-lg sm:text-md"/>
+          <ButtonComponent v-if="(this.formState > 0) && (this.formState < 5)" @click="changeState(true)" :id="3" bgColor="secd" text="Dalej" textColor="main" textWeight="bold" class="text-lg sm:text-md"/>
+          <ButtonComponent v-if="this.formState === 5" @click.once="sendData" :id="3" bgColor="secd" text="Zatwierdź" textColor="main" textWeight="bold" class="text-lg sm:text-md"/>
         </div>
       </section>
     </form>
@@ -171,7 +171,7 @@ export default {
         team: {
           teamname: localStorage.getItem('teamname'),
           email: localStorage.getItem('email'),
-          phone: 1 * localStorage.getItem('phone'),
+          phone: localStorage.getItem('phone'),
           category: null,
           players: [],
         }

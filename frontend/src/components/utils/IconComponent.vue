@@ -1,6 +1,5 @@
 <template>
-  <div
-      class="nav-moved absolute left-0 bg-secd h-full grid place-content-center transform-gpu transition duration-700 ease-in-out -translate-x-[100.5%]">
+  <div :class="`nav-moved absolute left-0 bg-secd h-full grid place-content-center transform-gpu transition duration-700 ease-in-out ${translate}`">
     <span class="text-main font-bold px-3 whitespace-nowrap">{{ title }}</span>
   </div>
   <div class="w-full h-auto flex justify-center items-center my-1 py-1">
@@ -16,6 +15,7 @@ export default {
   props: {
     title: String,
     icon: String,
+    translate: String,
   },
 }
 </script>
