@@ -102,7 +102,7 @@ export const getTemplate = (token) => {
                                                     <div class="m_alignment" align="center" style="line-height:10px"><a
                                                             href="https://knuryknurow.pl/eventy/streetball/weryfikacja/${token}"
                                                             style="outline:none" target="_blank" rel="noreferrer"><img
-                                                            src="https://knuryknurow.pl/img/knury_logo.svg"
+                                                            src="https://knuryknurow.pl/img/knury_logo.png"
                                                             class="m_big"
                                                             style="display:block;height:auto;border:0;width:495px;max-width:100%"
                                                             width="495"
