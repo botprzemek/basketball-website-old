@@ -5,6 +5,6 @@ export const links = [
     {title: 'Zespół', addr: '/zespol', icon: 'team'},
     {title: 'Zrzutka', addr: '/zrzutka', icon: 'fundraising'},
     // {title: 'O nas', addr: '/o-nas', icon: 'about'},
-    {title: 'Media', addr: '/media', icon: 'media'},
-    {title: 'Kontakt', addr: '/kontakt', icon: 'contact'},
+    // {title: 'Media', addr: '/media', icon: 'media'},
+    // {title: 'Kontakt', addr: '/kontakt', icon: 'contact'},
 ]

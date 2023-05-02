@@ -5,10 +5,8 @@ import cors from 'cors';
 
 dotenv.config();
 
-const server = express(), serverPort = process.env.SERVER_PORT, websiteAddress = process.env.WEBSITE_ADDRESS;
-const options = {
-    origin: ['https://knuryknurow.pl', websiteAddress],
-};
+const server = express(), serverPort = process.env.SERVER_PORT, websiteAddresses = JSON.parse(process.env.WEBSITE_ADDRESSES);
+const options = {origin:websiteAddresses};
 
 server.use(cors(options));
 server.options('*', cors(options));

@@ -16,13 +16,13 @@ export const errors = {
 };
 
 export const regex = {
-    teamname: /([a-zA-Z0-9-\s]{3,24})/,
-    email: /([a-z0-9]{3,24})(@)([a-z0-9]{3,24})(\.)([a-z]{1,5})/,
-    phone: /([0-9]{9})/,
-    category: /([0-2])/,
+    teamname: /([a-zA-Z0-9-\s]{3,24}$)/,
+    email: /([a-z0-9]{3,24})(@)([a-z0-9]{3,24})(\.)([a-z]{1,5}$)/,
+    phone: /([0-9]{9}$)/,
+    category: /([0-2]$)/,
     players: {
-        name: /([a-zA-Z]{3,24})(\s)([a-zA-Z]{3,24})/,
-        age: /([0-9]{2})/,
+        name: /([a-zA-Z]{3,24})(\s)([a-zA-Z]{3,24}$)/,
+        age: /([0-9]{2}$)/,
     }
 }
 
@@ -48,7 +48,8 @@ const validateElement = (element, name) => {
     let i = 0;
     element.forEach(player => {
         Object.keys(player).forEach(key => {
-            if (regex.players[key].test(player[key])) i++;
+            if (regex.players[key] === undefined) return false;
+            else if (regex.players[key].test(player[key])) i++;
             return false;
         });
     });

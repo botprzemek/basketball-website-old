@@ -4,7 +4,6 @@
     <main class="flex w-full h-full p-12 box-border">
       <router-view/>
     </main>
-    <!--    <FooterComponent/>-->
     <SpinnerComponent/>
   </section>
 </template>

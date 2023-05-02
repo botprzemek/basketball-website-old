@@ -8,6 +8,9 @@
   <div v-else-if="id===3" :class="`w-fit h-fit px-4 pt-2 pb-1.5 hover:cursor-pointer bg-${bgColor}`">
     <p :class="`text-${textColor} font-${textWeight}`">{{ text }}</p>
   </div>
+  <a v-else-if="id===4" :class="`w-fit h-fit px-4 pt-2 pb-1.5 hover:cursor-pointer bg-${bgColor}`" :href="link" download>
+    <p :class="`text-${textColor} font-${textWeight}`">{{ text }}</p>
+  </a>
 </template>
 
 <script>

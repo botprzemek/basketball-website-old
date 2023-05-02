@@ -12,7 +12,7 @@
 
 <script>
 import IconComponent from "@/components/utils/IconComponent.vue";
-import {links} from "@/assets/Links";
+import {links} from "@/assets/links";
 
 export default {
   name: "NavComponent",

@@ -1,9 +1,8 @@
 <template>
   <section class="z-10 w-full h-full relative place-content-center select-none mx-4">
     <div class="mt-8 mb-2 w-fit relative">
-      <h1 class="header z-10 relative w-fit opacity-0 text-4xl font-bold">Nasz Zespół</h1>
-      <div
-          class="pseudo z-20 absolute bg-secd w-[150%] h-[105%] -mt-2 inset-0 -left-[25%] transform-gpu transition duration-1000 ease-in-out -translate-x-[100%] origin-right"></div>
+      <h1 class="header z-10 relative w-fit text-4xl font-bold">Nasz Zespół</h1>
+<!--      <div class="pseudo z-20 absolute bg-secd w-[150%] h-[105%] -mt-2 inset-0 -left-[25%] transform-gpu transition duration-1000 ease-in-out -translate-x-[100%] origin-right"></div>-->
     </div>
     <ul v-if="loading" class="grid place-content-center grid-cols-5 gap-4">
       <li v-for="i in 24" :key="i" class="z-10 w-full h-full p-4 bg-main relative">
@@ -28,7 +27,7 @@
 <script>
 import PlayerComponent from "@/components/routes/team/PlayerComponent.vue";
 import {getData} from '@/methods/Get';
-import {animateHeader} from "@/methods/Animate";
+// import {animateHeader} from "@/methods/Animate";
 
 export default {
   name: 'TeamCompontent',
@@ -41,9 +40,9 @@ export default {
       players: {},
     }
   },
-  mounted() {
-    animateHeader();
-  },
+  // mounted() {
+  //   animateHeader();
+  // },
   beforeMount() {
     this.players = getData('players', async data => {
       this.players = await data;

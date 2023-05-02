@@ -34,18 +34,18 @@ const routes = [
         component: () => import('@/components/routes/team/TeamComponent.vue'),
         meta: {title: 'Zespół'}
     },
-   {
-        path: '/media',
-        name: 'MediaComponent',
-        component: ()=> import('@/components/routes/media/MediaComponent.vue'),
-        meta: { title: 'Media' }
-    },
-    {
-        path: '/kontakt',
-        name: 'ContactComponent',
-        component: ()=> import('@/components/routes/contact/ContactComponent.vue'),
-        meta: { title: 'Kontakt' }
-    },
+   // {
+   //      path: '/media',
+   //      name: 'MediaComponent',
+   //      component: ()=> import('@/components/routes/media/MediaComponent.vue'),
+   //      meta: { title: 'Media' }
+   //  },
+    // {
+    //     path: '/kontakt',
+    //     name: 'ContactComponent',
+    //     component: ()=> import('@/components/routes/contact/ContactComponent.vue'),
+    //     meta: { title: 'Kontakt' }
+    // },
     {
         path: '/zrzutka',
         component: () => import('@/components/routes/fundraising/FundraisingComponent.vue'),
