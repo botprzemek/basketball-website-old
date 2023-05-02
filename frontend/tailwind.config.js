@@ -8,12 +8,21 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'main': 'rgb(235, 64, 52)',
+        'main': 'rgb(242, 53, 53)',
         'secd': 'rgb(255, 255, 255)',
         'bkgd': 'rgb(29, 29, 29)',
       },
       backgroundSize: {
         full: '100%, 100%',
+      },
+      animation: {
+        'spinner': 'spinner 16s linear infinite',
+      },
+      keyframes: {
+        spinner: {
+          '0%': { transform: 'rotate(0deg)' },
+          '100%': { transform: 'rotate(360deg)' },
+        },
       },
     },
   },

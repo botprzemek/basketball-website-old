@@ -1,22 +1,17 @@
 <template>
-  <NavigationComponent />
-  <router-view />
-  <FooterComponent />
-  <div class="z-0 inset-0 absolute h-full w-screen bg-scroll animate-gradient bg-full bg-gradient-to-br from-[#1d1d1d] to-[#2d2d2d]"></div>
+  <NavigationComponent/>
+  <section class="z-10 min-h-screen h-full pl-12 flex flex-col relative select-none">
+    <main class="flex w-full h-full p-12 box-border">
+      <router-view/>
+    </main>
+    <SpinnerComponent/>
+  </section>
 </template>
 
-<script>
-import '@/main.css'
-import NavigationComponent from '@/components/NavigationComponent'
-import FooterComponent from '@/components/FooterComponent'
-export default {
-  name: 'App',
-  components: {
-    NavigationComponent,
-    FooterComponent,
-  }
-}
-</script>
+<script setup>
+import "@/main.css";
+import NavigationComponent from "@/components/navigation/NavigationComponent";
+import SpinnerComponent from "@/components/utils/SpinnerComponent";</script>
 
 <style>
 </style>
