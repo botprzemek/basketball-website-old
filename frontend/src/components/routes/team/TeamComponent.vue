@@ -1,5 +1,5 @@
 <template>
-  <section class="z-10 w-full h-full relative place-content-center select-none mx-4">
+  <section class="z-10 w-full h-full relative place-content-center select-none mx-4 mb-48">
     <div class="mb-2 w-fit relative">
       <h1 class="header z-10 relative w-fit text-4xl font-bold">Nasz Zespół</h1>
     </div>
