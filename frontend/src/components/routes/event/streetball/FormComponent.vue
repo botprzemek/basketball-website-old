@@ -172,7 +172,7 @@ export default {
           teamname: localStorage.getItem('teamname'),
           email: localStorage.getItem('email'),
           phone: localStorage.getItem('phone'),
-          category: null,
+          category: localStorage.getItem('category'),
           players: [],
         }
       }
@@ -198,8 +198,10 @@ export default {
     },
     sendData() {
       this.changeState(true);
+      if (this.teamData.team.category === null) this.teamData.team.category = 1;
+      if (this.teamData.team.phone === null) delete this.teamData.team.phone;
       this.teamData.team.players.forEach((player, i) => {
-        if (player === null) return;
+        if (player === null) return delete this.teamData.team.players[i];
         if (player.name === null || player.age === null) return;
         this.teamData.team.players[i] = {name: player.name, age: player.age};
       });
