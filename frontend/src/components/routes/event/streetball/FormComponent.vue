@@ -205,10 +205,6 @@ export default {
         if (player.name === null || player.age === null) return delete this.teamData.team.players[i];
         this.teamData.team.players[i] = {name: player.name, age: player.age};
       });
-      if (this.teamData.team.players[0] === null) delete this.teamData.team.players[0];
-      if (this.teamData.team.players[1] === null) delete this.teamData.team.players[1];
-      if (this.teamData.team.players[2] === null) delete this.teamData.team.players[2];
-      if (this.teamData.team.players[3] === null) delete this.teamData.team.players[3];
       sendForm('events/streetball/register', this.teamData, async callback => {
         if (callback.ok) return this.changeState(true);
         console.log(await callback.json());

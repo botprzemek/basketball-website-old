@@ -23,7 +23,10 @@ router.post('/register', async (request, response) => {
         const data = request.body.team;
         console.log(data);
         if (!validateData(data, response)) return;
-        Object.keys(data.players).forEach(key => data.players[key] = new Player(data.players[key].name, data.players[key].age));
+        Object.keys(data.players).forEach(key => {
+            if (data.players[key] == null) return delete data.players[key];
+            data.players[key] = new Player(data.players[key].name, data.players[key].age);
+        });
         const id = randomBytes(6).toString('hex');
         const token = randomBytes(6).toString('hex');
         const team = new Team(data.teamname, data.email, token, false, data.phone, data.category, data.players, Timestamp.now());
