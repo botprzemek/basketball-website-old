@@ -17,7 +17,7 @@ export const errors = {
 
 export const regex = {
     teamname: /([a-zA-Z0-9-\s]{3,24}$)/,
-    email: /([a-zA-Z0-9]{3,24})(@)([a-zA-Z0-9]{2,24})(\.)([a-zA-Z]{1,5}$)/,
+    email: /([a-zA-Z0-9]{3,54})(@)([a-zA-Z0-9]{2,24})(\.)([a-zA-Z]{1,5}$)/,
     phone: /([0-9]{9}$)/,
     category: /([0-2]$)/,
     players: {

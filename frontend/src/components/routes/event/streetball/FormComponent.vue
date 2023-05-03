@@ -85,7 +85,7 @@
           <section class="w-full h-fit px-3 py-2 border-secd border-[1px] mb-3">
             <input @input="saveData('email', $event.target.value)" id="email" v-model="teamData.team.email"
                    class="w-full bg-transparent text-secd text-md sm:text-sm placeholder-secd mt-0.5 focus:outline-0"
-                   maxlength="24" minlength="3" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-z]{2,}$" placeholder="Adres email"
+                   maxlength="54" minlength="3" placeholder="Adres email"
                    required type="email">
           </section>
           <div class="z-20 w-10 h-10 aspect-square bg-secd">
