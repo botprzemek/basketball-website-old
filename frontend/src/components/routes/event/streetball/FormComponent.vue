@@ -205,6 +205,7 @@ export default {
         if (player.name === null || player.age === null) return delete this.teamData.team.players[i];
         this.teamData.team.players[i] = {name: player.name, age: player.age};
       });
+      this.teamData.team.players = this.teamData.team.players.filter(Object);
       sendForm('events/streetball/register', this.teamData, async callback => {
         if (callback.ok) return this.changeState(true);
         console.log(await callback.json());
