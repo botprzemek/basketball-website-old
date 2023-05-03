@@ -46,22 +46,22 @@
           <p class="text-sm">Wybierz kategorię, w której drużyna będzie uczestniczyć.</p>
         </section>
         <section class="grid grid-flow-row sm:grid-flow-col gap-3">
-          <div v-if="teamData.team.category === 0" class="w-full h-fit px-3 py-2 border-main bg-main border-[1px] mb-3 grid place-content-center transition-all duration-300 ease-out">
+          <div v-if="teamData.team.category === 0" class="w-full h-fit px-3 py-2 border-main bg-main border-[1px] mb-3 grid place-content-center transition-all duration-300 ease-out hover:pointer">
             <p class="text-2xl font-bold mt-1">Szkolna</p>
           </div>
-          <div v-else @click="saveData('category', 0)" class="w-full h-fit px-3 py-2 border-secd border-[1px] mb-3 grid place-content-center hover:border-main hover:bg-main transition-all duration-300 ease-out">
+          <div v-else @click="saveData('category', 0)" class="w-full h-fit px-3 py-2 border-secd border-[1px] mb-3 grid place-content-center hover:border-main hover:bg-main transition-all duration-300 ease-out hover:pointer">
             <p class="text-2xl font-bold mt-1">Szkolna</p>
           </div>
-          <div v-if="teamData.team.category === 1" class="w-full h-fit px-3 py-2 border-main bg-main border-[1px] mb-3 grid place-content-center transition-all duration-300 ease-out">
+          <div v-if="teamData.team.category === 1" class="w-full h-fit px-3 py-2 border-main bg-main border-[1px] mb-3 grid place-content-center transition-all duration-300 ease-out hover:pointer">
             <p class="text-2xl font-bold mt-1">Otwarta</p>
           </div>
-          <div v-else @click="saveData('category', 1)" class="w-full h-fit px-3 py-2 border-secd border-[1px] mb-3 grid place-content-center hover:border-main hover:bg-main transition-all duration-300 ease-out">
+          <div v-else @click="saveData('category', 1)" class="w-full h-fit px-3 py-2 border-secd border-[1px] mb-3 grid place-content-center hover:border-main hover:bg-main transition-all duration-300 ease-out hover:pointer">
             <p class="text-2xl font-bold mt-1">Otwarta</p>
           </div>
-          <div v-if="teamData.team.category === 2" class="w-full h-fit px-3 py-2 border-main bg-main border-[1px] mb-3 grid place-content-center transition-all duration-300 ease-out">
+          <div v-if="teamData.team.category === 2" class="w-full h-fit px-3 py-2 border-main bg-main border-[1px] mb-3 grid place-content-center transition-all duration-300 ease-out hover:pointer">
             <p class="text-2xl font-bold mt-1">Damska</p>
           </div>
-          <div v-else @click="saveData('category', 2)" class="w-full h-fit px-3 py-2 border-secd border-[1px] mb-3 grid place-content-center hover:border-main hover:bg-main transition-all duration-300 ease-out">
+          <div v-else @click="saveData('category', 2)" class="w-full h-fit px-3 py-2 border-secd border-[1px] mb-3 grid place-content-center hover:border-main hover:bg-main transition-all duration-300 ease-out hover:pointer">
             <p class="text-2xl font-bold mt-1">Damska</p>
           </div>
         </section>
