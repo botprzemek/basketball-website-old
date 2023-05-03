@@ -199,6 +199,7 @@ export default {
     sendData() {
       this.changeState(true);
       this.teamData.team.players.forEach((player, i) => {
+        if (player.name === null || player.age === null) return;
         this.teamData.team.players[i] = {name: player.name, age: player.age};
       });
       sendForm('events/streetball/register', this.teamData, async callback => {

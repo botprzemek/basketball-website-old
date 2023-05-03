@@ -11,11 +11,11 @@ const router = Router();
 
 const limiter = rateLimit({
     windowMs: 10 * 60 * 1000,
-    max: 5,
+    max: 10,
     message: {status: 429, message: 'Too many requests, try again later.'}
 });
 
-//router.use(limiter);
+router.use(limiter);
 
 router.post('/register', async (request, response) => {
     try {
