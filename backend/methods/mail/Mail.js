@@ -8,4 +8,5 @@ export const sendMail = async (recevier, token) => {
         subject: 'Potwierdzenie rejestracji na turniej Knury Knurów 2023 🏀🔥',
         html: getTemplate(token),
     });
+    console.log(`Send email to ${recevier} with ${token}`);
 };

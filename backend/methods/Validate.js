@@ -36,6 +36,7 @@ export const validateData = (data, response) => {
     });
     if (Object.keys(data.players).length < 3) error.players = errors.null.players;
     if (Object.keys(error).length === 0) return true;
+    console.log(error);
     response.send({errors: error});
     return false;
 }

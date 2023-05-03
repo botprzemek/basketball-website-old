@@ -3,6 +3,7 @@ import {firestore} from '../Firebase.js';
 export const writeData = async (collectionPath, documentPath, data) => await firestore.collection(collectionPath).doc(documentPath.toString()).set(data);
 
 export const updateData = async (collectionPath, data, limit, filter, state, condition, matching) => {
+    console.log(data);
     if (data == null) return false;
     let collection = await firestore.collection(collectionPath);
     if (limit !== undefined) collection = collection.limit(limit);
