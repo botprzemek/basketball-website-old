@@ -1,7 +1,7 @@
 <template>
   <section v-if="loading" class="w-full h-full">
     <article class="w-full h-fit grid place-content-stretch mb-1.5">
-      <h1 class="text-2xl font-bold">Ładuję...</h1>
+      <h1 class="text-2xl sm:text-4xl font-bold">Ładuję...</h1>
       <p>
         Twoja drużyna została pomyślnie zarejestrowana na turniej.
         Pamiętaj o wypełnieniu zgód na udział.
@@ -16,7 +16,7 @@
   </section>
   <section v-else class="w-full h-full">
     <article class="w-full h-fit grid place-content-stretch mb-1.5">
-      <h1 class="text-2xl font-bold">Zarejestrowano!</h1>
+      <h1 class="text-2xl sm:text-4xl font-bold">Zarejestrowano!</h1>
       <p>
         Twoja drużyna została pomyślnie zarejestrowana na turniej.
         Pamiętaj o wypełnieniu zgód na udział.

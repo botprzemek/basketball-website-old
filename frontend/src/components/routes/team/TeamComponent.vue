@@ -1,9 +1,9 @@
 <template>
   <section class="z-10 w-full h-full relative place-content-center select-none mx-4 mb-48">
     <div class="mb-2 w-fit relative">
-      <h1 class="header z-10 relative w-fit text-4xl font-bold">Nasz Zespół</h1>
+      <h1 class="header z-10 relative w-fit text-2xl sm:text-4xl font-bold">Nasz Zespół</h1>
     </div>
-    <ul v-if="loading" class="grid place-content-center grid-cols-5 gap-4">
+    <ul v-if="loading" class="grid place-content-center grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 2xl:grid-cols-6 gap-4">
       <li v-for="i in 24" :key="i" class="z-10 w-full h-full p-4 bg-main relative">
         <h3 class="text-lg mb-2 opacity-0">
           <span class="text-md font-bold">Ładujący</span>

@@ -1,7 +1,7 @@
 <template>
   <section class="w-full h-full">
     <article class="w-full h-full grid">
-      <h1 class="text-4xl font-bold">Wystąpił Błąd!</h1>
+      <h1 class="text-2xl sm:text-4xl font-bold">Wystąpił Błąd!</h1>
       <p>
         Za <span class="timer">{{ time }}</span> sekund/y zostaniesz przeniesiony/a na stronę główną.
       </p>
