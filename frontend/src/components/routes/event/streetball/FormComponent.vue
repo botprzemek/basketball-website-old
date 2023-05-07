@@ -111,7 +111,7 @@
           <h2 class="text-2xl font-bold">Podsumowanie</h2>
           <p>
             Zatwierdzając formularz, akceptujesz
-            <router-link class="underline" to="/pliki/regulamin_streetball_2023.pdf">regulamin turnieju.</router-link>
+            <router-link class="underline" to="/files/regulamin_knury_streetball_2023.pdf">regulamin turnieju.</router-link>
           </p>
         </section>
       </section>

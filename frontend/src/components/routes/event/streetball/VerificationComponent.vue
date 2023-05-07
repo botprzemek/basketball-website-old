@@ -24,7 +24,7 @@
       </p>
       <section class="w-full h-fit grid place-items-end">
         <div class="w-fit h-fit flex flex-row">
-          <ButtonComponent :id="4" bgColor="secd" text="Pobierz .PDF" textColor="main" textWeight="bold" link="/files/test.txt"/>
+          <ButtonComponent :id="4" bgColor="secd" text="Pobierz .PDF" textColor="main" textWeight="bold" link="/files/zgoda_knury_streetball_2023.pdf"/>
         </div>
       </section>
     </article>
