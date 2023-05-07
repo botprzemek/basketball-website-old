@@ -110,8 +110,10 @@
         <section class="w-full h-fit grid place-content-start mb-1.5">
           <h2 class="text-2xl font-bold">Podsumowanie</h2>
           <p>
-            Zatwierdzając formularz, akceptujesz
-            <router-link class="underline" to="/files/regulamin_knury_streetball_2023.pdf">regulamin turnieju.</router-link>
+            Wysyłając formularz, akceptujesz
+            <a href="/files/regulamin_knury_streetball_2023.pdf" download>
+              <span class="underline">Regulamin</span>
+            </a>
           </p>
         </section>
       </section>
@@ -129,7 +131,7 @@
           <ButtonComponent v-if="this.formState === 0" @click="changeState(true)" :id="3" bgColor="secd" text="Rozpocznij" textColor="main" textWeight="bold" class="text-lg sm:text-md"/>
           <ButtonComponent v-if="(this.formState > 1) && (this.formState <= 5)" @click="changeState(false)" :id="3" bgColor="transparent" text="Powrót" textColor="main" textWeight="light" class="text-lg sm:text-md"/>
           <ButtonComponent v-if="(this.formState > 0) && (this.formState < 5)" @click="changeState(true)" :id="3" bgColor="secd" text="Dalej" textColor="main" textWeight="bold" class="text-lg sm:text-md"/>
-          <ButtonComponent v-if="this.formState === 5" @click="sendData" :id="3" bgColor="secd" text="Zatwierdź" textColor="main" textWeight="bold" class="text-lg sm:text-md"/>
+          <ButtonComponent v-if="this.formState === 5" @click="sendData" :id="3" bgColor="secd" text="Wyślij" textColor="main" textWeight="bold" class="text-lg sm:text-md"/>
         </div>
       </section>
     </form>

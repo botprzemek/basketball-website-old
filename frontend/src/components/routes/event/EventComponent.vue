@@ -5,9 +5,9 @@
         <h1 class="text-2xl sm:text-4xl font-bold">Knury Streetball 2023</h1>
         <p class="mb-3">
           27 Maja na Knurowskim Orliku odbędzie się turniej koszykówki ulicznej.
-          Zapraszamy
+          Zapraszamy do rejestracji! Ilość miejsc ograniczona!
         </p>
-        <div class="w-full sm:fit h-fit px-4 pt-2 pb-1.5 hover:cursor-pointer bg-secd text-2xl">
+        <div class="w-full sm:fit h-fit px-4 pt-2 pb-1.5 hover:cursor-pointer bg-secd text-lg sm:text-2xl">
           <p class="text-center sm:text-left text-main font-bold">Rejestracja</p>
         </div>
       </router-link>

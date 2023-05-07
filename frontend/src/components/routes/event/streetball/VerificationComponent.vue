@@ -20,11 +20,13 @@
       <p>
         Twoja drużyna została pomyślnie zarejestrowana na turniej.
         Pamiętaj o wypełnieniu zgód na udział.
-        Link do zgody znajduje się w wiadomości Email lub pod poniższym przyciskiem.
+        Link do zgody znajduje się pod poniższym przyciskiem.
       </p>
       <section class="w-full h-fit grid place-items-end">
         <div class="w-fit h-fit flex flex-row">
-          <ButtonComponent :id="4" bgColor="secd" text="Pobierz .PDF" textColor="main" textWeight="bold" link="/files/zgoda_knury_streetball_2023.pdf"/>
+          <a class="w-full sm:w-fit h-fit px-4 pt-2 pb-1.5 hover:cursor-pointer bg-secd text-lg sm:text-2xl text-center sm:text-left" href="/files/zgoda_knury_streetball_2023.pdf" download>
+            <p class="text-main font-bold">Zgoda</p>
+          </a>
         </div>
       </section>
     </article>
