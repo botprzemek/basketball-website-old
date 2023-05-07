@@ -6,8 +6,7 @@
         Kliknij w link, aby dowiedzieć się więcej.
       </p>
       <section class="w-full h-fit grid place-items-end">
-        <div class="w-full h-fit grid grid-flow-row gap-3">
-
+        <div class="w-full h-fit grid grid-flow-row sm:flex sm:flex-row gap-3">
           <router-link class="w-full sm:w-fit h-fit px-4 pt-2 pb-1.5 hover:cursor-pointer bg-secd text-lg sm:text-2xl text-center sm:text-left" to="/eventy/streetball/rejestracja">
             <p class="text-main font-bold">Rejestracja</p>
           </router-link>
