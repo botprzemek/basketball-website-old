@@ -111,7 +111,7 @@
           <h2 class="text-2xl font-bold">Podsumowanie</h2>
           <p>
             Wysyłając formularz, akceptujesz
-            <a href="/files/regulamin_knury_streetball_2023.pdf" download>
+            <a href="/files/regulamin_knury_streetball_2023_1.pdf" download>
               <span class="underline">Regulamin</span>
             </a>
           </p>

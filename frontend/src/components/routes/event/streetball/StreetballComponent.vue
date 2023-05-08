@@ -10,7 +10,7 @@
           <router-link class="w-full sm:w-fit h-fit px-4 pt-2 pb-1.5 hover:cursor-pointer bg-secd text-lg sm:text-2xl text-center sm:text-left" to="/eventy/streetball/rejestracja">
             <p class="text-main font-bold">Rejestracja</p>
           </router-link>
-          <a class="w-full sm:w-fit h-fit px-4 pt-2 pb-1.5 hover:cursor-pointer bg-secd text-lg sm:text-2xl text-center sm:text-left" href="/files/regulamin_knury_streetball_2023.pdf" download>
+          <a class="w-full sm:w-fit h-fit px-4 pt-2 pb-1.5 hover:cursor-pointer bg-secd text-lg sm:text-2xl text-center sm:text-left" href="/files/regulamin_knury_streetball_2023_1.pdf" download>
             <p class="text-main font-bold">Regulamin</p>
           </a>
           <a class="w-full sm:w-fit h-fit px-4 pt-2 pb-1.5 hover:cursor-pointer bg-secd text-lg sm:text-2xl text-center sm:text-left" href="/files/zgoda_knury_streetball_2023.pdf" download>
