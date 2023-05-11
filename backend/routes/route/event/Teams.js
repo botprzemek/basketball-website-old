@@ -7,9 +7,9 @@ const router = Router();
 //router.get('/', async (request, response) => response.send(await getData('register', null)));
 //router.get('/:team', async (request, response) => response.send(await getData('register', request.params.team)));
 router.get('/name/latest', async (request, response) => {
-    const data = await getData('register', null, 'date', 'desc', null, null, 1);
-    console.log(data);
-    response.send(data);
+    let data = await getData('register', null, 'date', 'desc', null, null, 1);
+    Object.keys(data).forEach(key => data = data[key].name);
+    response.send({name:data});
 });
 router.get('/amount', async (request, response) => {
     const amount = await getAmount('register');
