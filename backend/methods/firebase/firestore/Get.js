@@ -17,3 +17,10 @@ export const getAmount = async (collectionPath) => {
     const data = await firestore.collection(collectionPath).count().get();
     return data.data().count;
 }
+
+export const getAmountWhere = async (collectionPath, filter, condition, matching) => {
+    let collection = await firestore.collection(collectionPath);
+    if (condition !== undefined && matching !== undefined) collection = collection.where(filter, condition, matching);
+    const data = await collection.count().get();
+    return data.data().count;
+}
