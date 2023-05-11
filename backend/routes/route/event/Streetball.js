@@ -5,21 +5,20 @@ import {Timestamp} from 'firebase-admin/firestore';
 import {updateData, writeData} from '../../../methods/firebase/firestore/Post.js';
 import {Player, Team} from '../../../models/Team.js';
 import {validateData} from '../../../methods/Validate.js';
-import {sendMail} from "../../../methods/mail/Mail.js";
-import {saveCachedData} from "../../../methods/cache/Cache.js";
-import {getMultipleAmount} from "../../../methods/firebase/firestore/Get.js";
-import teams from "./Teams.js";
+import {sendMail} from '../../../methods/mail/Mail.js';
+import {saveCachedData} from '../../../methods/cache/Cache.js';
+import {getMultipleAmount} from '../../../methods/firebase/firestore/Get.js';
+import teams from './Teams.js';
 
 const router = Router();
+
+router.use('/teams', teams);
 
 const limiter = rateLimit({
     windowMs: 10 * 60 * 1000,
     max: 10,
     message: {status: 429, message: 'Too many requests, try again later.'}
 });
-
-router.use(limiter);
-router.use('/teams', teams);
 
 router.post('/register', async (request, response) => {
     try {
@@ -44,6 +43,8 @@ router.post('/register', async (request, response) => {
     }
 });
 
+router.use('/register', limiter);
+
 router.post('/verify', async (request, response) => {
     try {
         if (request.body.token == null || request.body.verified == null) return response.sendStatus(400);
@@ -59,5 +60,7 @@ router.post('/verify', async (request, response) => {
         return response.sendStatus(500);
     }
 });
+
+router.use('/verify', limiter);
 
 export default router;

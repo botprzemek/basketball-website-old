@@ -3,7 +3,14 @@
     <article class="w-full h-full grid">
       <h1 class="text-2xl sm:text-4xl font-bold mb-3">Knury Streetball 2023</h1>
       <p class="mb-3">
-        Ostatnio zapisana drużyna:<br>
+        Ostatnio zapisana drużyna:
+      </p>
+      <div class="w-full h-fit px-3 py-2 bg-main grid place-content-center">
+        <p class="text-lg font-bold">
+          {{ latest }}
+        </p>
+      </div>
+      <p class="mb-3">
         Ilość zapisanych drużyn w kategoriach:
       </p>
       <ul class="grid grid-flow-row sm:grid-flow-col gap-3 mb-3">
@@ -41,6 +48,7 @@ export default {
   data() {
     return {
       loading: true,
+      latest: 'Brak',
       categories: {
         name: ['Szkolna', 'Otwarta', 'Damska'],
         amount: [0, 0, 0]
@@ -48,6 +56,9 @@ export default {
     }
   },
   beforeMount() {
+    getData('events/streetball/teams/name/latest', data => {
+      this.latest = data;
+    });
     getData('events/streetball/teams/amount/categories', data => {
       this.categories.amount = data.amount;
       this.loading = false;
