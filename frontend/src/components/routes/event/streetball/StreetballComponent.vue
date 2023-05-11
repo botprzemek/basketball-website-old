@@ -4,6 +4,7 @@
       <h1 class="text-2xl sm:text-4xl font-bold mb-3">Knury Streetball 2023</h1>
       <p class="mb-3">
         Kliknij w link, aby dowiedzieć się więcej.
+        Zapisanych drużyn: {{  }}
       </p>
       <section class="w-full h-fit grid place-items-end">
         <div class="w-full h-fit grid grid-flow-row sm:flex sm:flex-row gap-3">
@@ -22,7 +23,27 @@
   </section>
 </template>
 
-<script setup>
+<script>
+import {getData} from "@/methods/Get";
+
+export default {
+  name: 'StreetballComponent',
+  data() {
+    return {
+      categories: [
+          0,
+          0,
+          0,
+      ]
+    }
+  },
+  beforeMount() {
+    this.players = getData('teams/amount/', async data => {
+      this.players = await data;
+      this.loading = false;
+    });
+  }
+}
 </script>
 
 <style>
