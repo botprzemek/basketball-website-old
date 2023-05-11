@@ -1,6 +1,6 @@
 <template>
   <section class="w-full h-full">
-    <article class="w-full h-full grid">
+    <article class="w-full h-full grid mb-48">
       <h1 class="text-2xl sm:text-4xl font-bold mb-3">Knury Streetball 2023</h1>
       <p class="mb-3">
         Ostatnio zapisana drużyna
