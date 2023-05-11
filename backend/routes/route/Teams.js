@@ -7,7 +7,7 @@ const router = Router();
 //router.get('/:team', async (request, response) => response.send(await getData('register', request.params.team)));
 router.get('/amount', async (request, response) => {
     const categories = [];
-    for (let i = 0; i < 3; i++) categories[i] = await getAmountWhere('register', 'category', '==', 0);
+    for (let i = 0; i < 3; i++) categories[i] = await getAmountWhere('register', 'category', '==', i);
     response.send({amount:categories});
 });
 
