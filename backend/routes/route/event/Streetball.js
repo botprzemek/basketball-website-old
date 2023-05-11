@@ -6,6 +6,8 @@ import {updateData, writeData} from '../../../methods/firebase/firestore/Post.js
 import {Player, Team} from '../../../models/Team.js';
 import {validateData} from '../../../methods/Validate.js';
 import {sendMail} from "../../../methods/mail/Mail.js";
+import {getCachedData, saveCachedData} from "../../../methods/cache/Cache.js";
+import {getMultipleAmount} from "../../../methods/firebase/firestore/Get.js";
 
 const router = Router();
 
@@ -33,6 +35,7 @@ router.post('/register', async (request, response) => {
         await writeData('register', id, team.getTeam());
         await sendMail(team.email, token);
         response.sendStatus(201);
+        saveCachedData('categories', getMultipleAmount('register', 'category', '=='), 24 * 3600 * 1000);
     } catch (error) {
         console.log(error);
         return response.sendStatus(500);
