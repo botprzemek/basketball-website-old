@@ -20,7 +20,7 @@ router.get('/amount/categories', async (request, response) => {
         const categories = [];
         for (let i = 0; i < 3; i++) categories[i] = await getAmountWhere('register', 'category', '==', i);
         saveCachedData('categories-amount', categories, 24 * 3600 * 1000);
-        response.send({amount:categories});
+        return response.send({amount:categories});
     }
     response.send({amount:getCachedData('categories-amount')});
 });
