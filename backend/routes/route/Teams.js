@@ -10,7 +10,7 @@ router.get('/amount', async (request, response) => {
 });
 
 router.get('/amount/:category', async (request, response) => {
-    response.send({amount:await getAmountWhere('register', 'category', '==', 1*request.body.params.category)});
+    response.send({amount:await getAmountWhere('register', 'category', '==', 1*request.params.category)});
 });
 
 export default router;
