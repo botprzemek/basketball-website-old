@@ -3,7 +3,7 @@
     <article class="w-full h-full grid">
       <h1 class="text-2xl sm:text-4xl font-bold mb-3">Knury Streetball 2023</h1>
       <p class="mb-3">
-        Ostatnio zapisana drużyna:
+        Ostatnio zapisana drużyna
       </p>
       <div class="w-full h-fit px-3 py-2 bg-main grid place-content-center mb-3">
         <p class="text-lg font-bold">
@@ -11,7 +11,7 @@
         </p>
       </div>
       <p class="mb-3">
-        Ilość zapisanych drużyn w kategoriach:
+        Ilość zapisanych drużyn w kategoriach
       </p>
       <ul class="grid grid-flow-row sm:grid-flow-col gap-3 mb-3">
         <li v-for="i in 3" :key="i" class="w-full h-fit px-3 py-2 bg-main grid place-content-center">
