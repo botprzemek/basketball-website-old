@@ -6,7 +6,7 @@ const router = Router();
 
 //router.get('/', async (request, response) => response.send(await getData('register', null)));
 //router.get('/:team', async (request, response) => response.send(await getData('register', request.params.team)));
-router.get('/name/latest', async (request, response) => response.send(await getData('register', null, 'date', 'desc', null, null, 1)));
+router.get('/name/latest', async (request, response) => response.send((await getData('register', null, 'date', 'desc', null, null, 1)).teamname));
 router.get('/amount', async (request, response) => {
     const amount = await getAmount('register');
     response.send({amount:amount});
