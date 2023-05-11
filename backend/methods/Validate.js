@@ -16,12 +16,12 @@ export const errors = {
 };
 
 export const regex = {
-    teamname: /([a-zA-Z0-9-\s]{3,24}$)/,
-    email: /([a-zA-Z0-9]{3,24})(@)([a-zA-Z0-9]{2,24})(\.)([a-zA-Z]{1,5}$)/,
+    teamname: /([a-zA-ZZĄĆĘŁŃÓŚŹŻąćęłńóśźż0-9-\s]{3,24}$)/,
+    email: /([a-zA-Z0-9]{3,54})(@)([a-zA-Z0-9]{2,24})(\.)([a-zA-Z]{1,5}$)/,
     phone: /([0-9]{9}$)/,
     category: /([0-2]$)/,
     players: {
-        name: /([a-zA-Z]{3,24})(\s)([a-zA-Z]{3,24}$)/,
+        name: /([a-zA-ZZĄĆĘŁŃÓŚŹŻąćęłńóśźż]{3,24})(\s)([a-zA-ZZĄĆĘŁŃÓŚŹŻąćęłńóśźż]{3,24}$)/,
         age: /([0-9]{2}$)/,
     }
 }
@@ -36,6 +36,7 @@ export const validateData = (data, response) => {
     });
     if (Object.keys(data.players).length < 3) error.players = errors.null.players;
     if (Object.keys(error).length === 0) return true;
+    console.log(error);
     response.send({errors: error});
     return false;
 }
