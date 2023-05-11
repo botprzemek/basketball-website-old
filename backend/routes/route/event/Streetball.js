@@ -15,7 +15,7 @@ const limiter = rateLimit({
     message: {status: 429, message: 'Too many requests, try again later.'}
 });
 
-//router.use(limiter);
+router.use(limiter);
 
 router.post('/register', async (request, response) => {
     try {

@@ -12,3 +12,7 @@ export const getData = async (collectionPath, documentPath, filter, state, condi
     await data.forEach(doc => result[doc.id] = doc.data());
     return result;
 }
+
+export const getAmount = async (collectionPath) => {
+    return firestore.collection(collectionPath).count();
+}
