@@ -9,13 +9,13 @@ router.get('/amount', async (request, response) => {
     const amount = await getAmount('register');
     response.send({amount:amount});
 });
-router.get('/amount', async (request, response) => {
+router.get('/amount/categories', async (request, response) => {
     const categories = [];
     for (let i = 0; i < 3; i++) categories[i] = await getAmountWhere('register', 'category', '==', i);
     response.send({amount:categories});
 });
 
-router.get('/amount/:category', async (request, response) => {
+router.get('/amount/categories/:category', async (request, response) => {
     response.send({amount:await getAmountWhere('register', 'category', '==', 1*request.params.category)});
 });
 
