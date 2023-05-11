@@ -33,11 +33,13 @@ export default {
   name: 'StreetballComponent',
   data() {
     return {
-      categories: [0, 0, 0]
+      categories: {
+        amount: [0, 0, 0]
+      }
     }
   },
   beforeMount() {
-    this.players = getData('teams/amount/categories', async data => this.categories = data);
+    this.players = getData('events/streetball/teams/amount/categories', async data => this.categories = data);
   }
 }
 </script>
