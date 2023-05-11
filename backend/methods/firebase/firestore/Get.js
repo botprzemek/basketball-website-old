@@ -4,7 +4,7 @@ export const getData = async (collectionPath, documentPath, filter, state, condi
     let collection = await firestore.collection(collectionPath), result = {};
     if (filter !== undefined) collection = collection.orderBy(filter, state);
     if (limit !== undefined) collection = collection.limit(limit);
-    if (condition !== undefined && matching !== undefined) collection = collection.where(filter, condition, matching);
+    if (condition !== null && matching !== undefined) collection = collection.where(filter, condition, matching);
     if (typeof documentPath !== 'object') {
         const data = await collection.doc(documentPath).get();
         return data.data();
