@@ -5,10 +5,10 @@
       <p class="mb-3">
         Kliknij w link, aby dowiedzieć się więcej.
         Ilość zapisanych drużyn w kategoriach:
-        Szkolna: {{ categories.amount[0] }},
-        Otwarta: {{ categories.amount[1] }},
-        Damska: {{ categories.amount[2] }},
       </p>
+      <ul class="mb-3">
+        <li v-for="i in 3" :key="i" class="">{{ categories.name[i-1] }} - {{ categories.amount[i-1] }},</li>
+      </ul>
       <section class="w-full h-fit grid place-items-end">
         <div class="w-full h-fit grid grid-flow-row sm:flex sm:flex-row gap-3">
           <router-link class="w-full sm:w-fit h-fit px-4 pt-2 pb-1.5 hover:cursor-pointer bg-secd text-lg sm:text-2xl text-center sm:text-left" to="/eventy/streetball/rejestracja">
@@ -33,13 +33,18 @@ export default {
   name: 'StreetballComponent',
   data() {
     return {
+      loading: true,
       categories: {
+        name: ['Szkolna', 'Otwarta', 'Damska'],
         amount: [0, 0, 0]
       }
     }
   },
   beforeMount() {
-    this.players = getData('events/streetball/teams/amount/categories', async data => this.categories = data);
+    getData('events/streetball/teams/amount/categories', data => {
+      this.categories.amount = data.amount;
+      this.loading = false;
+    });
   }
 }
 </script>

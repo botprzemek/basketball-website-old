@@ -38,7 +38,6 @@ export default {
       window.location.href = `${window.location.href}/${this.player.name} ${this.player.lastname}`;
     },
     async getData(player) {
-      this.loading = true;
       if (typeof player === 'string') await getData(`players/fullname/${player}`, async (callback) => {
         if (callback.message !== 'Failed to fetch') {
           this.playerData = await callback;

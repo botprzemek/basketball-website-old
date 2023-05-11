@@ -38,8 +38,8 @@ export default {
     }
   },
   beforeMount() {
-    this.players = getData('players', async data => {
-      this.players = await data;
+    getData('players', data => {
+      this.players = data;
       this.loading = false;
     });
   }
