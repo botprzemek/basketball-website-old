@@ -30,7 +30,7 @@ export const getMultipleAmount = async (collectionPath, filter, condition) => {
     let collection = await firestore.collection(collectionPath);
     const data = [];
     for (let i = 0; i < 3; i++) {
-        if (condition !== undefined && matching !== undefined) collection = await firestore.collection(collectionPath).where(filter, condition, i);
+        if (condition !== undefined) collection = await firestore.collection(collectionPath).where(filter, condition, i);
         const data = await collection.count().get();
         data[i] = data.data().count;
     }
