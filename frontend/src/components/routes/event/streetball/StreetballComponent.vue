@@ -5,7 +5,7 @@
       <p class="mb-3">
         Ostatnio zapisana drużyna:
       </p>
-      <div class="w-full h-fit px-3 py-2 bg-main grid place-content-center">
+      <div class="w-full h-fit px-3 py-2 bg-main grid place-content-center mb-3">
         <p class="text-lg font-bold">
           {{ latest }}
         </p>
@@ -57,7 +57,7 @@ export default {
   },
   beforeMount() {
     getData('events/streetball/teams/name/latest', data => {
-      this.latest = data;
+      this.latest = data.name;
     });
     getData('events/streetball/teams/amount/categories', data => {
       this.categories.amount = data.amount;
