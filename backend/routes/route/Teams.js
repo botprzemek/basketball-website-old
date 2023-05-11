@@ -6,7 +6,7 @@ const router = Router();
 //router.get('/', async (request, response) => response.send(await getData('register', null)));
 //router.get('/:team', async (request, response) => response.send(await getData('register', request.params.team)));
 router.get('/amount', async (request, response) => {
-    response.send({amount:getAmount()});
+    response.send({amount:getAmount('register')});
 });
 
 export default router;
