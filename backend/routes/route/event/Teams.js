@@ -1,20 +1,25 @@
 import {Router} from 'express';
-import {getAmount, getAmountWhere, getMultipleAmount} from '../../../methods/firebase/firestore/Get.js';
+import {getAmount, getAmountWhere, getData, getMultipleAmount} from '../../../methods/firebase/firestore/Get.js';
 import {getCachedData, saveCachedData} from "../../../methods/cache/Cache.js";
 
 const router = Router();
 
 //router.get('/', async (request, response) => response.send(await getData('register', null)));
 //router.get('/:team', async (request, response) => response.send(await getData('register', request.params.team)));
+router.get('/newest/name', async (request, response) => response.send((await getData('register', null, 'date', 'asc')).name));
+router.get('/latest/name', async (request, response) => response.send((await getData('register', null, 'date', 'desc')).name));
 router.get('/amount', async (request, response) => {
     const amount = await getAmount('register');
     response.send({amount:amount});
 });
 router.get('/amount/categories', async (request, response) => {
-    const categories = [];
-    for (let i = 0; i < 3; i++) categories[i] = await getAmountWhere('register', 'category', '==', i);
-    saveCachedData('categories-amount', categories, 24 * 3600 * 1000);
-    response.send({amount:categories});
+    if (getCachedData('categories-amount') == null) {
+        const categories = [];
+        for (let i = 0; i < 3; i++) categories[i] = await getAmountWhere('register', 'category', '==', i);
+        saveCachedData('categories-amount', categories, 24 * 3600 * 1000);
+        response.send({amount:categories});
+    }
+    response.send({amount:getCachedData('categories-amount')});
 });
 router.get('/amount/categories/:category', async (request, response) => {
     if (getCachedData('categories-amount') == null) {
