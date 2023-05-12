@@ -6,19 +6,19 @@ import {updateData, writeData} from '../../../methods/firebase/firestore/Post.js
 import {Player, Team} from '../../../models/Team.js';
 import {validateData} from '../../../methods/Validate.js';
 import {sendMail} from '../../../methods/mail/Mail.js';
-import {saveCachedData} from '../../../methods/cache/Cache.js';
+import {getCachedData, saveCachedData} from '../../../methods/cache/Cache.js';
 import {getMultipleAmount} from '../../../methods/firebase/firestore/Get.js';
 import teams from './Teams.js';
 
 const router = Router();
-
-router.use('/teams', teams);
 
 const limiter = rateLimit({
     windowMs: 10 * 60 * 1000,
     max: 10,
     message: {status: 429, message: 'Too many requests, try again later.'}
 });
+
+router.use('/teams', teams);
 
 router.post('/register', async (request, response) => {
     try {
@@ -36,7 +36,8 @@ router.post('/register', async (request, response) => {
         await writeData('register', id, team.getTeam());
         await sendMail(team.email, token);
         response.sendStatus(201);
-        saveCachedData('categories', getMultipleAmount('register', 'category', '=='), 24 * 3600 * 1000);
+        saveCachedData('categories', await getMultipleAmount('register', 'category', '=='), 60 * 1000);
+        console.table(getCachedData('categories'));
     } catch (error) {
         console.log(error);
         return response.sendStatus(500);
