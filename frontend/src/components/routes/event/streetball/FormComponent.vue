@@ -46,7 +46,7 @@
           <p class="text-sm">Wybierz kategorię, w której drużyna będzie uczestniczyć.</p>
         </section>
         <section class="grid grid-flow-row sm:grid-flow-col gap-0 sm:gap-3">
-          <div v-if="categories.amount[0] >= 8" class="w-full h-fit px-3 py-2 border-secd border-[1px] mb-3 grid place-content-center transition-all duration-300 ease-out">
+          <div v-if="categories.amount[0] >= 16" class="w-full h-fit px-3 py-2 border-secd border-[1px] mb-3 grid place-content-center transition-all duration-300 ease-out">
             <p class="text-2xl font-bold mt-1 opacity-50">Szkolna</p>
           </div>
           <div v-else-if="teamData.team.category !== 0" @click="saveData('category', 0)" class="w-full h-fit px-3 py-2 border-secd border-[1px] mb-3 grid place-content-center hover:border-main hover:bg-main transition-all duration-300 ease-out hover:cursor-pointer">
@@ -55,7 +55,7 @@
           <div v-else class="w-full h-fit px-3 py-2 border-main bg-main border-[1px] mb-3 grid place-content-center transition-all duration-300 ease-out hover:cursor-pointer">
             <p class="text-2xl font-bold mt-1">Szkolna</p>
           </div>
-          <div v-if="categories.amount[1] >= 8" class="w-full h-fit px-3 py-2 border-secd border-[1px] mb-3 grid place-content-center transition-all duration-300 ease-out">
+          <div v-if="categories.amount[1] >= 16" class="w-full h-fit px-3 py-2 border-secd border-[1px] mb-3 grid place-content-center transition-all duration-300 ease-out">
             <p class="text-2xl font-bold mt-1 opacity-50">Otwarta</p>
           </div>
           <div v-else-if="teamData.team.category !== 1" @click="saveData('category', 1)" class="w-full h-fit px-3 py-2 border-secd border-[1px] mb-3 grid place-content-center hover:border-main hover:bg-main transition-all duration-300 ease-out hover:cursor-pointer">
@@ -64,7 +64,7 @@
           <div v-else class="w-full h-fit px-3 py-2 border-main bg-main border-[1px] mb-3 grid place-content-center transition-all duration-300 ease-out hover:cursor-pointer">
             <p class="text-2xl font-bold mt-1">Otwarta</p>
           </div>
-          <div v-if="categories.amount[2] >= 8" class="w-full h-fit px-3 py-2 border-secd border-[1px] mb-3 grid place-content-center transition-all duration-300 ease-out">
+          <div v-if="categories.amount[2] >= 16" class="w-full h-fit px-3 py-2 border-secd border-[1px] mb-3 grid place-content-center transition-all duration-300 ease-out">
             <p class="text-2xl font-bold mt-1 opacity-50">Damska</p>
           </div>
           <div v-else-if="teamData.team.category !== 2" @click="saveData('category', 2)" class="w-full h-fit px-3 py-2 border-secd border-[1px] mb-3 grid place-content-center hover:border-main hover:bg-main transition-all duration-300 ease-out hover:cursor-pointer">
